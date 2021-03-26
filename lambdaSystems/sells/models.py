@@ -11,7 +11,7 @@ class Sells(m.Model):
 
     Also contains a JSON with Products FK and quantity.
     """
-    invoice_id = m.IntegerField(unique=True)
+    invoice_id = m.IntegerField(unique=True, primary_key=True)
 
     # TODO
     #id_salesman = m.ForeignKey('users.Salesman',
