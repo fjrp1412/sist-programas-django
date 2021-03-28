@@ -13,8 +13,8 @@ class Sells(m.Model):
     """
     invoice_id = m.IntegerField(unique=True, primary_key=True)
 
-    id_salesman = m.ForeignKey('users.Salesman',
-                               on_delete=m.CASCADE)
+    #id_salesman = m.ForeignKey('users.Salesman',
+    #                           on_delete=m.CASCADE)
 
     income = m.DecimalField(max_digits=10, decimal_places=2)
 

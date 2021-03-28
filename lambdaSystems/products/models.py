@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Category(models.Model):
-    id = models.IntegerField(unique=True, primary_key=True)
+    id = models.AutoField(unique=True, primary_key=True)
     name = models.CharField(max_length=120)
 
     def __str__(self):
@@ -13,7 +13,7 @@ class Category(models.Model):
 class Products(models.Model):
     """Contains all relevant information about products"""
 
-    id_product = models.IntegerField(unique=True, primary_key=True)
+    id_product = models.CharField(max_length=20 ,unique=True, primary_key=True)
     name = models.CharField(max_length=120)
 
     category = models.ForeignKey('Category',
