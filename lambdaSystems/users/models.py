@@ -23,7 +23,6 @@ class Admin(models.Model):
     admin_id = models.AutoField(primary_key=True)
 
 
-
 class Salesman(models.Model):
     """Model for seller model, this class is a 1to1 field
     cause require extra info"""
