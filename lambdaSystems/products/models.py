@@ -18,7 +18,7 @@ class Products(models.Model):
 
     category = models.ForeignKey('Category',
                                  on_delete=models.CASCADE)
-    price = models.FloatField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     brand = models.CharField(max_length=120)
 
     def __str__(self):
