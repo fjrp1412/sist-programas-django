@@ -23,7 +23,7 @@ class Admin(Profile):
         proxy = True
 
 
-class Salesman(Profile):
+class Salesman(models.Model):
     """Model for seller model, this class is a 1to1 field
     cause require extra info"""
 
