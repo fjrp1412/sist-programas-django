@@ -15,10 +15,9 @@ class Profile(models.Model):
 class Admin(Profile):
     """Model for admin user."""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    admin_id = models.AutoField(primary_key=True, unique=True, default=0)
+
 
 class Salesman(Profile):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     count_sells = models.IntegerField()
-    earnings = models.DecimalField()
-    seller_id = models.AutoField(primary_key=True, unique=True, default=0)
+    earnings = models.DecimalField(max_digits=10, decimal_places=2)
