@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     """Base class for User and Admin classes."""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_id = models.AutoField(primary_key=True)
+    user_id = models.AutoField(primary_key=True, unique=True)
     identification_card = models.CharField(max_length=10)
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
@@ -20,7 +20,7 @@ class Admin(models.Model):
     """Model for user Admin, is a proxy class
     because this class not require any extra data."""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    admin_id = models.AutoField(primary_key=True)
+    admin_id = models.AutoField(primary_key=True, unique=True)
 
 
 class Salesman(models.Model):
@@ -30,4 +30,4 @@ class Salesman(models.Model):
     seller = models.OneToOneField(Profile, on_delete=models.CASCADE)
     count_sells = models.IntegerField()
     earnings = models.DecimalField()
-    seller_id = models.AutoField(primary_key=True)
+    seller_id = models.AutoField(primary_key=True, unique=True)
