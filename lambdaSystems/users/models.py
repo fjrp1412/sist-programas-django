@@ -29,4 +29,4 @@ class Salesman(models.Model):
 
     seller = models.OneToOneField(Profile, on_delete=models.CASCADE)
     count_sells = models.IntegerField()
-    earnings = models.DecimalField()
+    earnings = models.DecimalField(max_digits=10, decimal_places=2)
