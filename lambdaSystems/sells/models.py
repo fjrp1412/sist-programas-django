@@ -11,10 +11,11 @@ class Sells(m.Model):
 
     Also contains a JSON with Products FK and quantity.
     """
-    invoice_id = m.IntegerField(unique=True, primary_key=True)
+    invoice_id = m.AutoField(unique=True, primary_key=True)
 
-    #id_salesman = m.ForeignKey('users.Salesman',
-    #                           on_delete=m.CASCADE)
+    id_salesman = m.ForeignKey('users.Salesman',
+                               on_delete=m.CASCADE,
+                               default=0)
 
     income = m.DecimalField(max_digits=10, decimal_places=2)
 
@@ -32,5 +33,3 @@ class Sells(m.Model):
     def __str__(self):
         return f"Invoice Number: {self.invoice_id}, date: {self.date}, salesman: {self.id_salesman}, \nproducts:" \
                f" {self.products},\ndescription: {self.description}  "
-
-
