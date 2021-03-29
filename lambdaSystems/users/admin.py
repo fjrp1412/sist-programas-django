@@ -18,7 +18,7 @@ class AdminAdmin(admin.ModelAdmin):
 
 
 @admin.register(Salesman)
-class SellermanAdmin(admin.ModelAdmin):
+class SalesmanAdmin(admin.ModelAdmin):
     """Admin for Sellerman users."""
     list_display = ('pk', 'user', 'identification_document',
                     'name', 'created', 'last_modified',
