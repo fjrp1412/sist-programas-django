@@ -11,7 +11,7 @@ class Sells(m.Model):
 
     Also contains a JSON with Products FK and quantity.
     """
-    invoice_id = m.AutoField(unique=True, primary_key=True)
+    invoice_id = m.AutoField(unique=True, primary_key=True, auto_created=True)
 
     id_salesman = m.ForeignKey('users.Salesman',
                                on_delete=m.CASCADE,
