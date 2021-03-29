@@ -1,0 +1,17 @@
+{% block container %}
+
+    <div class="container">
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!--input type="hidden" name="id_product" value="{{ category.pk }}" placeholder="id_product"/-->
+
+            <input type="text" name="name" value="{{ category.name }}" placeholder="name" />
+
+            <button type="submit" class="btn btn-primary btn-block mt-5">Save!</button>
+
+        </form>
+    </div>
+
+{% endblock %}

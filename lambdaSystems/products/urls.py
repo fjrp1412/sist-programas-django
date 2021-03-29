@@ -9,4 +9,10 @@ urlpatterns = [
         view=views.CreateProductView.as_view(),
         name='newproduct'
     ),
+
+    path(
+        route='new/category/',
+        view=views.CreateCategoryView.as_view(),
+        name='newcategory'
+    ),
 ]
