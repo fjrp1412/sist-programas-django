@@ -40,9 +40,11 @@ body{
 
 #register-box{
     width:100%;
+    align-items: center;
 }
 
 #data-box{
+    margin: auto;
     width: 430px;
     height: 550px;
     background: #091644;
