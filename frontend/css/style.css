@@ -31,7 +31,7 @@ body{
 }
 
 #Title{
-    margin: 25px 0px;
+    margin: 35px 0px;
     font-size: 35px;
     color: #FFFFFF;
     width:100%;
@@ -40,14 +40,74 @@ body{
 
 #register-box{
     width:100%;
-    align-items: center;
+    align-content: center;
+    margin: auto;
 }
 
 #data-box{
-    margin: auto;
+    margin: 0px auto;
     width: 430px;
-    height: 550px;
+    height: 510px;
     background: #091644;
     box-shadow: 0px 4px 15px 5px rgba(255, 255, 255, 0.15);
     border-radius: 25px;
+}
+
+.data{
+    padding: 15px 0px 0px 0px;
+    color: white;
+}
+
+.sub-title{
+    font-size: 23px;
+    font-weight: bold;
+    position: relative;
+    left: 65px;
+}
+
+.bar{
+    height: 45px;
+    width: 75%;
+    margin: 10px auto;
+    background: rgba(3, 5, 45, 0.87);
+    box-shadow: 2.5px 2.5px 7px 2px rgba(255, 255, 255, 0.144);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.text-example{
+    /*font-family: Roboto Slab;*/
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.Button{
+    margin: 35px auto;
+    align-content: center;
+    text-align: center;
+}
+
+#Button{
+    color: rgb(91, 230, 255);
+    font-size: 15px;
+    width: 35%;
+    padding: 5px 0px;
+    background: rgb(18, 30, 201);
+    box-shadow: 0px 5px 15px 5px rgb(1, 14, 26);
+    border-radius: 8px;
+    
+}
+
+#sing-up{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: 30px;
+}
+
+#sing-up >h3 >a{
+    text-decoration: underline;
+    color: rgb(91, 230, 255);
 }
