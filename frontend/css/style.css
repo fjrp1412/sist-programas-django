@@ -56,6 +56,8 @@ body{
 .data{
     padding: 15px 0px 0px 0px;
     color: white;
+    align-content: center;
+    align-items: center;
 }
 
 .sub-title{
@@ -66,45 +68,46 @@ body{
 }
 
 .bar{
-    height: 45px;
-    width: 75%;
     margin: 10px auto;
-    background: rgba(3, 5, 45, 0.87);
-    box-shadow: 2.5px 2.5px 7px 2px rgba(255, 255, 255, 0.144);
-    border-radius: 15px;
-    text-align: center;
+    position: relative;
+    left: 45px;
 }
 
-.text-example{
+.inputdata{
     /*font-family: Roboto Slab;*/
     font-weight: bold;
     font-size: 20px;
-    line-height: 45px;
     color: rgba(255, 255, 255, 0.35);
+    height: 40px;
+    width: 75%;
+    background: rgba(3, 5, 45, 0.87);
+    box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.301);
+    border-radius: 20px;
+    text-align: center;
 }
 
 .Button{
-    margin: 35px auto;
+    margin: 30px auto;
     align-content: center;
     text-align: center;
 }
 
 #Button{
     color: rgb(91, 230, 255);
-    font-size: 15px;
-    width: 35%;
+    font-size: 18px;
+    font-weight: bold;
+    width: 40%;
     padding: 5px 0px;
     background: rgb(18, 30, 201);
-    box-shadow: 0px 5px 15px 5px rgb(1, 14, 26);
+    box-shadow: 0px 5px 15px 5px rgb(1, 8, 15);
     border-radius: 8px;
-    
 }
 
 #sing-up{
     text-decoration: none;
     color: white;
     text-align: center;
-    margin: 30px;
+    margin: 25px;
 }
 
 #sing-up >h3 >a{
