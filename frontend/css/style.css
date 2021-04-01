@@ -103,14 +103,14 @@ body{
     border-radius: 8px;
 }
 
-#sing-up{
+#log-in{
     text-decoration: none;
     color: white;
     text-align: center;
     margin: 25px;
 }
 
-#sing-up >h3 >a{
+#log-in >h3 >a{
     text-decoration: underline;
     color: rgb(91, 230, 255);
 }
