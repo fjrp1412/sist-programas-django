@@ -68,7 +68,7 @@ body{
 }
 
 .bar{
-    margin: 15px auto;
+    margin: 10px auto;
     position: relative;
     left: 45px;
 }
@@ -82,12 +82,12 @@ body{
     width: 75%;
     background: rgba(3, 5, 45, 0.87);
     box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.301);
-    border-radius: 20px;
+    border-radius: 15px;
     text-align: center;
 }
 
 .Button{
-    margin: 30px auto;
+    margin: 35px auto;
     align-content: center;
     text-align: center;
     
