@@ -1,0 +1,135 @@
+*{
+    margin: 0px;
+}
+
+body{
+    background: linear-gradient(289.79deg, #09AC1A -13.01%, #0070D7 98.42%);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.go-back{
+    text-decoration: none;
+    font-size: 55px;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    
+}
+
+.go-back >a{
+    color: cornflowerblue;
+}
+
+#left-side{
+    position:absolute;
+    display: inline-block;
+    width: 50vw;
+    height: 100vh;
+    left: 0vh;
+}
+
+#righ-side{
+    z-index: 95;
+    align-content: center;
+    position:absolute;
+    width: 50vw;
+    left: 50vw;
+    height: 100vh;
+    display: inline-block;
+    background: linear-gradient(360deg, #041E19 18.95%, #0C8E8E 106.63%);
+    box-shadow: -3px 0px 8px 4px rgba(0, 0, 0, 0.45);
+    border-radius: 15px 0px 0px 15px;
+}
+
+#Title{
+    margin: 65px 0px;
+    font-size: 50px;
+    color: #FFFFFF;
+    width:100%;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#register-box{
+    width:100%;
+    align-content: center;
+    margin: auto;
+}
+
+#data-box{
+    margin: 85px auto;
+    width: 430px;
+    height: 340px;
+    background: #003535;
+    box-shadow: 0px 4px 15px 5px rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+}
+
+.data{
+    padding: 25px 0px 0px 0px;
+    color: white;
+    align-content: center;
+    align-items: center;
+}
+
+.sub-title{
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    left: 65px;
+    margin: 5px 0px;
+}
+
+.bar{
+    margin: 10px auto;
+    position: relative;
+    left: 45px;
+}
+
+.inputdata{
+    /*font-family: Roboto Slab;*/
+    font-weight: bold;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.35);
+    height: 45px;
+    width: 75%;
+    background: #00051B;
+    box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.301);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.request{
+    color: rgb(156, 156, 156);
+    margin: 25px auto 10px auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.listrequest{
+    text-align: left;
+    display: inline-block;
+    margin: 5px 25px 0px 20px;
+}
+
+.Button{
+    margin: 35px auto;
+    align-content: center;
+    text-align: center;
+    
+}
+
+#Button{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: bold;
+    width: 40%;
+    padding: 6px 20px;
+    background: rgba(0, 150, 87, 0.81);
+    box-shadow: 0px 5px 15px 5px rgb(1, 8, 15);
+    border-radius: 8px;
+}
