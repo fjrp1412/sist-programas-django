@@ -15,4 +15,10 @@ urlpatterns = [
         view=views.CreateCategoryView.as_view(),
         name='newcategory'
     ),
+
+    path(
+        route='list/',
+        view=views.ProductsFeedView.as_view(),
+        name="productslist"
+    ),
 ]
