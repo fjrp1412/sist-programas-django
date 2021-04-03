@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Sales</title>
+    {% load static %}
+    <link rel="stylesheet"
+          href="{% static 'sells/css/style_register_sales.css'%}" />
+      <script src="https://kit.fontawesome.com/2a05ff98f9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="header">
+        <h1 id="title">
+            Sistema de Monitoreo
+        </h1>
+        <div class="go-back">
+            <a href="/frontend/html/index.html"><i class="fas fa-arrow-circle-left"></i></a>
+        </div>
+    </header>
+    <main>
+        <div id="Title">
+            <h2>
+                Registro de Venta
+            </h2>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <section class="box-register">
+                <div class="left-side">
+                    <div class="data">
+                        <h3 class="sub-title">
+                            Nº Factura
+                        </h3>
+                        <!-- Input Data -->
+                        <div class="bar">
+                            <input class="inputdata"  type="text" value="#000000000" readonly>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <h3 class="sub-title">
+                            Cliente
+                        </h3>
+                        <!-- Input Data -->
+                        <div class="bar">
+                            <input class="inputdata" editable="false"type="text" placeholder="Joan Marquez" required>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <h3 class="sub-title">
+                            Vendedor
+                        </h3>
+                        <!-- Input Data -->
+                        <div class="bar">
+                            <input class="inputdata" type="text" placeholder="Ana Chang" required>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <h3 class="sub-title">
+                            Fecha
+                        </h3>
+                        <!-- Input Data -->
+                        <div class="bar">
+                            <input class="inputdata" type="text" placeholder="DD/MM/AA" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center-side">
+                    <div class="list-label">
+                        <h3 class="sub-title">
+                            Productos
+                        </h3>
+                        <h3 class="sub-title">
+                            Rubro
+                        </h3>
+                        <h3 class="sub-title">
+                            Precio Neto
+                        </h3>
+                        <h3 class="sub-title">
+                            I.V.A
+                        </h3>
+                        <h3 class="sub-title" id="total">
+                            Total
+                        </h3>
+                    </div>
+                    <!-- Input Data -->
+                    <div class="inputdata">
+                        <table>
+                            <tr>
+                                <input type="text" placeholder="Caranfa">
+                                <input type="text" placeholder="Simp">
+                                <input type="text" placeholder="100$">
+                                <input type="text" placeholder="16$">
+                                <input type="text" placeholder="116$">
+                            </tr>
+                            <tr>
+                                <input type="text" placeholder="Caranfa">
+                                <input type="text" placeholder="Simp">
+                                <input type="text" placeholder="100$">
+                                <input type="text" placeholder="16$">
+                                <input type="text" placeholder="116$">
+                            </tr>
+                            <tr>
+                                <input type="text" placeholder="Caranfa">
+                                <input type="text" placeholder="Simp">
+                                <input type="text" placeholder="100$">
+                                <input type="text" placeholder="16$">
+                                <input type="text" placeholder="116$">
+                            </tr>
+                            <tr>
+                                <input type="text" placeholder="Caranfa">
+                                <input type="text" placeholder="Simp">
+                                <input type="text" placeholder="100$">
+                                <input type="text" placeholder="16$">
+                                <input type="text" placeholder="116$">
+                            </tr>
+                            <tr>
+                                <input type="text" placeholder="Caranfa">
+                                <input type="text" placeholder="Simp">
+                                <input type="text" placeholder="100$">
+                                <input type="text" placeholder="16$">
+                                <input type="text" placeholder="116$">
+                            </tr>
+                            <tr>
+                                <input type="text" placeholder="Caranfa">
+                                <input type="text" placeholder="Simp">
+                                <input type="text" placeholder="100$">
+                                <input type="text" placeholder="16$">
+                                <input type="text" placeholder="116$">
+                            </tr>
+                            <tr>
+                                <input type="text" placeholder="Caranfa">
+                                <input type="text" placeholder="Simp">
+                                <input type="text" placeholder="100$">
+                                <input type="text" placeholder="16$">
+                                <input type="text" placeholder="116$">
+                            </tr>
+                            <tr>
+                                <input type="text" placeholder="Caranfa">
+                                <input type="text" placeholder="Simp">
+                                <input type="text" placeholder="100$">
+                                <input type="text" placeholder="16$">
+                                <input type="text" placeholder="116$">
+                            </tr>
+                            <tr>
+                                <input type="text" placeholder="Caranfa">
+                                <input type="text" placeholder="Simp">
+                                <input type="text" placeholder="100$">
+                                <input type="text" placeholder="16$">
+                                <input type="text" placeholder="116$">
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="Button">
+                    <a id="Button" type="submit" href="">Cargar Venta</a>
+                </div>
+            </section>
+        </form>
+    </main>
+</body>
+</html>
