@@ -31,8 +31,8 @@ body{
 }
 
 #Title{
-    margin: 35px 0px;
-    font-size: 35px;
+    margin: 30px 0px;
+    font-size: 40px;
     color: #FFFFFF;
     width:100%;
     text-align: center;
@@ -82,22 +82,24 @@ body{
     width: 75%;
     background: rgba(3, 5, 45, 0.87);
     box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.301);
-    border-radius: 20px;
+    border-radius: 15px;
     text-align: center;
 }
 
 .Button{
-    margin: 30px auto;
+    margin: 35px auto;
     align-content: center;
     text-align: center;
+    
 }
 
 #Button{
+    text-decoration: none;
     color: rgb(91, 230, 255);
     font-size: 18px;
     font-weight: bold;
     width: 40%;
-    padding: 5px 0px;
+    padding: 6px 25px;
     background: rgb(18, 30, 201);
     box-shadow: 0px 5px 15px 5px rgb(1, 8, 15);
     border-radius: 8px;

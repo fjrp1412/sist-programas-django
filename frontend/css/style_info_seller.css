@@ -1,0 +1,134 @@
+*{
+    margin: 0px;
+}
+
+
+.go-back{
+    text-decoration: none;
+    font-size: 55px;
+    display: inline-block;
+    position: relative;
+    left: 10px;
+    top: 6px;
+}
+
+.go-back >a{
+    color: #0c667c;
+}
+
+#header{
+    background: linear-gradient(90.88deg, #32B8CA -17.16%, #183D9A 125.57%);
+    box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.25);
+    height: 10vh;
+
+}
+
+#title{
+    position: absolute;
+    left: 8vw;
+    top: 2vh;
+    font-size: 45px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+body{
+    background: #FFFFFF;
+}
+
+main{
+    display: inline-flex;
+}
+
+.left-side{
+    width: 30%;
+    text-align: center;
+    margin: 10px 0px 10px 25px;
+}
+
+#box-info{
+    width: 70%;
+    margin: 85px auto 0px auto;
+    background: linear-gradient(359.59deg, #8F1DC5 0.46%, #9E31D0 19.74%, #CA6DF3 40.91%, #EBD1FF 75.25%);
+    border-radius: 25px;
+    border: 3px solid #E225E5;
+    box-shadow: 0px 0px 15px 6px rgba(174, 20, 245, 0.678);
+}
+
+.seller{
+    width: 100%;
+    margin: 0px auto;
+}
+
+#box-info img{
+    width: 65%;
+    border-radius: 20px;
+    margin: -50px 0px 0px 0px;
+    box-shadow: 0px 5px 15px 1px rgb(19, 11, 29);
+}
+
+.name{
+    font-size: 45px;
+    margin: 20px;
+}
+
+.information{
+    padding-bottom: 40px;
+    font-size: 22px;
+    color: #e6e5e7;
+}
+
+.information >h3{
+    margin: 15px auto;
+}
+
+.right-side{
+    width: 65%;
+    text-align: center;
+    margin: 10px 10px;
+}
+
+.buttons{
+    margin: 40px 0px 25px 0px;
+}
+
+.buttons button{
+    margin: 0px 60px;
+    text-decoration: none;
+    color: #071a4e;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.buttons #sales{
+    background: linear-gradient(360deg, rgb(6, 226, 189), rgb(140, 248, 252));
+    border: 2px solid #0edfdf;
+    border-radius: 5px;
+}
+
+.buttons #sales a{
+    text-decoration: none;
+    color: rgb(26, 121, 145);
+}
+
+.buttons #income{
+    background: linear-gradient(180deg, #19fa04, #1ae408);
+    border: 2px solid #51c703;
+    box-sizing: border-box;
+    border-radius: 5px;  
+}
+
+.buttons #income a{
+    text-decoration: none;
+    color: rgb(42, 121, 18);
+}
+
+#graph{
+    border: rgb(235, 196, 26) 5px solid;
+    background: #0a83a1;
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0px 5px 15px 5px rgba(78, 77, 80, 0.349);
+}
