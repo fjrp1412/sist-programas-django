@@ -1,0 +1,15 @@
+{% block container %}
+    <div class="container">
+        <div class="row">
+
+            {% for product in products %}
+
+            <p>{{ product.id_product }}</p>
+            <p>{{ product.name }}</p>
+            <p>{{ product.category }}</p>
+            <p>{{ product.price }} $</p>
+            <p>{{ product.brand }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
