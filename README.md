@@ -3,19 +3,19 @@
 
 ## To Do
 
-###Vistas
+### Vistas
 - inicio de sesion
 - creacion de usuario
 - registro venta
 - visualizacion estadisticas
 
-###Formularios
+### Formularios
 - Creacion de usuarios
 - Carga de ventas
 
-###Datos de prueba o fake data
+### Datos de prueba o fake data
 
 
-###Calculo de estadisticos
+### Calculo de estadisticos
 
-###Scripts de Testing
+### Scripts de Testing
