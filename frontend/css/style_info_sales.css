@@ -1,0 +1,135 @@
+*{
+    margin: 0px;
+}
+
+
+.go-back{
+    text-decoration: none;
+    font-size: 55px;
+    display: inline-block;
+    position: relative;
+    left: 10px;
+    top: 6px;
+}
+
+.go-back >a{
+    color: #0c667c;
+}
+
+#header{
+    background: linear-gradient(90.88deg, #32B8CA -17.16%, #183D9A 125.57%);
+    box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.25);
+    height: 10vh;
+
+}
+
+#title{
+    position: absolute;
+    left: 8vw;
+    top: 2vh;
+    font-size: 45px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+body{
+    background: #0b0c42;
+}
+
+#Title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin: 20px;
+}
+
+.box-register{
+    background: linear-gradient(180deg, #39ec7e 0%, #08971b 100%);
+    border: 6px solid #068631;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    width: 90%;
+    padding:10px;
+    margin: 80px auto;
+}
+
+.left-side{
+    display: inline-block;
+}
+
+.data{
+    padding: 15px 0px 0px 0px;
+    color: rgb(255, 255, 255);
+    align-content: center;
+    align-items: center;
+}
+
+.sub-title{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bar{
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.inputdata{
+    /*font-family: Roboto Slab;*/
+    font-weight: bold;
+    font-size: 20px;
+    height: 40px;
+    width: 75%;
+    background: rgb(255, 255, 255);
+    box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.301);
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+.center-side{
+    width: 75.5%;
+    display: inline-block;
+    position: relative;
+    top: 15px;
+    
+    
+}
+
+
+.list-label >.sub-title{
+    display: inline-block;
+    font-size: 25px;
+    margin: 0px 49px 5px 49px;
+    color: #FFFFFF;
+}
+
+#total{
+    margin-left: 85px;
+    color: #FFFFFF;
+}
+
+.center-side .inputdata{
+    /*font-family: Roboto Slab;*/
+    margin-top: 5px;
+    height: 370px;
+    width: 100%;
+    background: #910841;
+    border-radius: 10px;
+    border: 1px solid #ccd3da;
+    box-sizing: border-box;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.center-side input{
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 0px;
+    width: 180px;
+    font-size: 15px;
+    margin: 10px 4px;
+}
