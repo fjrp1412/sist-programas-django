@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search of Sales</title>
+    <script src="https://kit.fontawesome.com/2a05ff98f9.js" crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet"
+          href="{% static 'sells/css/style_search_sales.css' %}" />
+</head>
+<body>
+    <header id="header">
+        <h1 id="title">
+            Información de Ventas
+        </h1>
+        <div class="go-back">
+            <a href="/frontend/html/index.html"><i class="fas fa-arrow-circle-left"></i></a>
+        </div>
+    </header>
+    <main id="content">
+        <h1 id="Title">
+            
+        </h1>
+        <div class="box">
+            <div class="left-side">
+                <h2>
+                    Filtros de Busqueda
+                </h2>
+                <div class="filter">
+                    <div class="data">
+                        <h3 class="sub-title">
+                            Nº Factura
+                        </h3>
+                        <!-- Input Data -->
+                        <div class="bar">
+                            <input class="inputdata" type="number" placeholder="#000000000" >
+                        </div>
+                    </div>
+                    <div class="data">
+                        <h3 class="sub-title">
+                            Cliente
+                        </h3>
+                        <!-- Input Data -->
+                        <div class="bar">
+                            <input class="inputdata" type="text" placeholder="Joan Marquez" >
+                        </div>
+                    </div>
+                    <div class="data">
+                        <h3 class="sub-title">
+                            Vendedor 
+                        </h3>
+                        <!-- Input Data -->
+                        <div class="bar">
+                            <select class="inputdata">
+                                <option value="Ana Chang">Ana Chang</option>
+                                <option value="Paty Rodriguez">Paty Rodriguez</option>
+                                <option value="Andrés Cabrera">Andrés Cabrera</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <h3 class="sub-title">
+                            Fecha 
+                        </h3>
+                        <!-- Input Data -->
+                        <div class="bar">
+                            <input class="inputdata" type="date" placeholder="DD/MM/AA">
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <div class="right-side">
+                <h2>
+                    Ventas Realizadas
+                </h2>
+                <div id="boxsales">
+                    <div class="sales">
+                        <a href="/frontend/html/info_sales.html">
+                            <div class="barinfo">
+                                <input class="leftvalue" placeholder="#00000000" readonly>
+                                <input class="rightvalue" type="text" placeholder="Ana Chang" readonly>
+                                <input class="leftvalue" type="number" placeholder="25$" readonly>
+                                <input class="rightvalue" type="date" placeholder="DD/MM/AA" readonly>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sales">
+                        <a href="#">
+                            <div class="barinfo">
+                                <input class="leftvalue" placeholder="#00000000" readonly>
+                                <input class="rightvalue" type="text" placeholder="Ana Chang" readonly>
+                                <input class="leftvalue" type="number" placeholder="25$" readonly>
+                                <input class="rightvalue" type="date" placeholder="DD/MM/AA" readonly>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sales">
+                        <a href="/frontend/html/info_sales.html">
+                            <div class="barinfo">
+                                <input class="leftvalue" placeholder="#00000000" readonly>
+                                <input class="rightvalue" type="text" placeholder="Ana Chang" readonly>
+                                <input class="leftvalue" type="number" placeholder="25$" readonly>
+                                <input class="rightvalue" type="date" placeholder="DD/MM/AA" readonly>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sales">
+                        <a href="/frontend/html/info_sales.html">
+                            <div class="barinfo">
+                                <input class="leftvalue" placeholder="#00000000" readonly>
+                                <input class="rightvalue" type="text" placeholder="Ana Chang" readonly>
+                                <input class="leftvalue" type="number" placeholder="25$" readonly>
+                                <input class="rightvalue" type="date" placeholder="DD/MM/AA" readonly>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sales">
+                        <a href="/frontend/html/info_sales.html">
+                            <div class="barinfo">
+                                <input class="leftvalue" placeholder="#00000000" readonly>
+                                <input class="rightvalue" type="text" placeholder="Ana Chang" readonly>
+                                <input class="leftvalue" type="number" placeholder="25$" readonly>
+                                <input class="rightvalue" type="date" placeholder="DD/MM/AA" readonly>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sales">
+                        <a href="/frontend/html/info_sales.html">
+                            <div class="barinfo">
+                                <input class="leftvalue" placeholder="#00000000" readonly>
+                                <input class="rightvalue" type="text" placeholder="Ana Chang" readonly>
+                                <input class="leftvalue" type="number" placeholder="25$" readonly>
+                                <input class="rightvalue" type="date" placeholder="DD/MM/AA" readonly>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sales">
+                        <a href="/frontend/html/info_sales.html">
+                            <div class="barinfo">
+                                <input class="leftvalue" placeholder="#00000000" readonly>
+                                <input class="rightvalue" type="text" placeholder="Ana Chang" readonly>
+                                <input class="leftvalue" type="number" placeholder="25$" readonly>
+                                <input class="rightvalue" type="date" placeholder="DD/MM/AA" readonly>
+                            </div>
+                        </a>
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </main> 
+</body>
+</html>

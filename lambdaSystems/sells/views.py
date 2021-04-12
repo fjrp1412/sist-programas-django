@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, redirect
 from django.forms import formset_factory
+from django.views.generic import DetailView
 
 import json
 from datetime import date
@@ -60,7 +62,7 @@ def register_sell(request):
         )
 
         s.save()
-        print(s)
+        return redirect(f"/sells/detail/{invoice_id}/")
 
 
     order_form_set = formset_factory(OrderForm, extra=6)
@@ -72,4 +74,53 @@ def register_sell(request):
         request,
         template_name="sells/register_sales.html",
         context=context
+    )
+
+class SellDetailView(DetailView, LoginRequiredMixin):
+    template_name = 'sells/info_sales.html'
+    slug_field = 'pk'
+    slug_url_kwarg = 'pk'
+    model = Sells
+    queryset = Sells.objects.all()
+    context_object_name = 'invoice_id'
+
+    def __init__(self, **kwargs):
+        super()
+        print('******************************')
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['salesman']  = context['object'].id_salesman.name
+        context['invoice_id'] = context['object'].invoice_id
+        context['customer']  = context['object'].customer
+        context['date']  = context['object'].date
+        context['products'] = json.loads(context['object'].products)
+        context['income']  = context['object'].income
+
+        print('******************************')
+        print(context['invoice_id'])
+        print('******************************')
+        print(context['salesman'])
+        print('******************************')
+        print(context['customer'])
+        print('******************************')
+        print(context['date'])
+        print('******************************')
+        print(context['products'])
+        print('******************************')
+        print(context['income'])
+        print('******************************')
+        print('******************************')
+
+        return context
+
+
+
+
+def search_sell(request):
+    return render(
+        request,
+        template_name="sells/search_sales.html"
     )

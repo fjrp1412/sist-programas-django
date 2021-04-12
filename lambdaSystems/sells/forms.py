@@ -4,18 +4,6 @@ from django.forms import ModelForm
 from sells.models import Sells, Order
 from users.models import Salesman
 
-class RegisterSellForm(ModelForm):
-    class Meta:
-        model = Sells
-        fields = [
-            'id_salesman',
-            'income',
-            'id_category',
-            #'date',
-            'description',
-            'products'
-        ]
-
 
 class OrderForm(ModelForm):
     class Meta:
@@ -26,7 +14,6 @@ class OrderForm(ModelForm):
             'category',
             'base_price',
             'quantity',
-            #'total_price'
         ]
 
 

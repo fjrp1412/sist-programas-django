@@ -10,4 +10,16 @@ urlpatterns = [
         name='register'
     ),
 
+    path(
+        route='search/',
+        view=views.search_sell,
+        name='search'
+    ),
+
+    path(
+        route='detail/<int:pk>/',
+        view=views.SellDetailView.as_view(),
+        name='detail'
+    )
+
 ]
