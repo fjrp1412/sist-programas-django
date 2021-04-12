@@ -6,7 +6,6 @@
 ### Vistas
 - inicio de sesion
 - creacion de usuario
-- registro venta
 - visualizacion estadisticas
 
 ### Formularios
