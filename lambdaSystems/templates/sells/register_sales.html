@@ -35,7 +35,7 @@
                         </h3>
                         <!-- Input Data -->
                         <div class="bar">
-                            <input class="inputdata"  type="text" value="#000000000" readonly>
+                            <input class="inputdata"  type="text" value="#000{{invoice_id}}" readonly>
                         </div>
                     </div>
                     <div class="data">
@@ -44,7 +44,8 @@
                         </h3>
                         <!-- Input Data -->
                         <div class="bar">
-                            <input class="inputdata" editable="false"type="text" placeholder="Joan Marquez" required>
+                            {{ form2.customer }}
+                            <!--input class="inputdata" editable="false" type="text" placeholder="Cliente" required-->
                         </div>
                     </div>
                     <div class="data">
@@ -53,7 +54,7 @@
                         </h3>
                         <!-- Input Data -->
                         <div class="bar">
-                            <input class="inputdata" type="text" placeholder="Ana Chang" required>
+                            {{ form2.salesman }}
                         </div>
                     </div>
                     <div class="data">
@@ -62,7 +63,9 @@
                         </h3>
                         <!-- Input Data -->
                         <div class="bar">
-                            <input class="inputdata" type="text" placeholder="DD/MM/AA" required>
+
+                            <input class="inputdata" value="{% now 'SHORT_DATETIME_FORMAT' %}"
+                             readonly>
                         </div>
                     </div>
                 </div>
@@ -79,83 +82,38 @@
                             Precio Neto
                         </h3>
                         <h3 class="sub-title">
-                            I.V.A
+                            Cantidad
                         </h3>
-                        <h3 class="sub-title" id="total">
+                        <!--h3 class="sub-title" id="total">
                             Total
-                        </h3>
+                        </h3-->
                     </div>
                     <!-- Input Data -->
                     <div class="inputdata">
+                        {{ forms.management_form }}
                         <table>
+                        {% for form in form.forms %}
                             <tr>
-                                <input type="text" placeholder="Caranfa">
-                                <input type="text" placeholder="Simp">
-                                <input type="text" placeholder="100$">
-                                <input type="text" placeholder="16$">
-                                <input type="text" placeholder="116$">
+                                <td>
+                                    {{ form.product_name }}
+                                </td>
+                                <td>
+                                    {{ form.category }}
+                                </td>
+                                <td>
+                                    {{ form.base_price }}
+                                </td>
+                                <td>
+                                    {{ form.quantity }}
+                                </td>
+
                             </tr>
-                            <tr>
-                                <input type="text" placeholder="Caranfa">
-                                <input type="text" placeholder="Simp">
-                                <input type="text" placeholder="100$">
-                                <input type="text" placeholder="16$">
-                                <input type="text" placeholder="116$">
-                            </tr>
-                            <tr>
-                                <input type="text" placeholder="Caranfa">
-                                <input type="text" placeholder="Simp">
-                                <input type="text" placeholder="100$">
-                                <input type="text" placeholder="16$">
-                                <input type="text" placeholder="116$">
-                            </tr>
-                            <tr>
-                                <input type="text" placeholder="Caranfa">
-                                <input type="text" placeholder="Simp">
-                                <input type="text" placeholder="100$">
-                                <input type="text" placeholder="16$">
-                                <input type="text" placeholder="116$">
-                            </tr>
-                            <tr>
-                                <input type="text" placeholder="Caranfa">
-                                <input type="text" placeholder="Simp">
-                                <input type="text" placeholder="100$">
-                                <input type="text" placeholder="16$">
-                                <input type="text" placeholder="116$">
-                            </tr>
-                            <tr>
-                                <input type="text" placeholder="Caranfa">
-                                <input type="text" placeholder="Simp">
-                                <input type="text" placeholder="100$">
-                                <input type="text" placeholder="16$">
-                                <input type="text" placeholder="116$">
-                            </tr>
-                            <tr>
-                                <input type="text" placeholder="Caranfa">
-                                <input type="text" placeholder="Simp">
-                                <input type="text" placeholder="100$">
-                                <input type="text" placeholder="16$">
-                                <input type="text" placeholder="116$">
-                            </tr>
-                            <tr>
-                                <input type="text" placeholder="Caranfa">
-                                <input type="text" placeholder="Simp">
-                                <input type="text" placeholder="100$">
-                                <input type="text" placeholder="16$">
-                                <input type="text" placeholder="116$">
-                            </tr>
-                            <tr>
-                                <input type="text" placeholder="Caranfa">
-                                <input type="text" placeholder="Simp">
-                                <input type="text" placeholder="100$">
-                                <input type="text" placeholder="16$">
-                                <input type="text" placeholder="116$">
-                            </tr>
+                        {% endfor %}
                         </table>
                     </div>
                 </div>
                 <div class="Button">
-                    <a id="Button" type="submit" href="">Cargar Venta</a>
+                    <button id="Button" type="submit">Cargar Venta</button>
                 </div>
             </section>
         </form>
