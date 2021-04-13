@@ -39,10 +39,9 @@ def clean_order_info(order):
 def register_sell(request):
     invoice_id = Sells.objects.latest('invoice_id').pk + 1
     if request.method == "POST":
+        # Clean the data in the Sell and calculate what is needed
         data_dict = request.POST.dict()
-
         order_info = clean_order_info(data_dict)
-        #print(request.POST)
 
         salesman = Salesman.objects.get(pk=int(data_dict['salesman']))
         customer = data_dict['customer']
@@ -51,6 +50,7 @@ def register_sell(request):
             income += order['total_price']
         products = json.dumps(order_info)
 
+        # Create and save the Sell Instance
         s = Sells(
             invoice_id=invoice_id,
             id_category=Category.objects.get(pk=6),
@@ -60,16 +60,18 @@ def register_sell(request):
             products=products,
             date = date.today()
         )
-
         s.save()
+        # Redirect to the invoice detail
         return redirect(f"/sells/detail/{invoice_id}/")
 
-
+    # Add the forms to add products orders
     order_form_set = formset_factory(OrderForm, extra=6)
     context = {'form': order_form_set(),
                'invoice_id': invoice_id,
                'form2': InvoiceForm
                }
+
+
     return render(
         request,
         template_name="sells/register_sales.html",
@@ -77,19 +79,21 @@ def register_sell(request):
     )
 
 class SellDetailView(DetailView, LoginRequiredMixin):
+    """See the Detail of a Sell"""
+
     template_name = 'sells/info_sales.html'
+
+    # In which base will be the QuerySet made and sent by the URL
     slug_field = 'pk'
     slug_url_kwarg = 'pk'
+
     model = Sells
     queryset = Sells.objects.all()
+
     context_object_name = 'invoice_id'
 
-    def __init__(self, **kwargs):
-        super()
-        print('******************************')
-
-
     def get_context_data(self, **kwargs):
+        """Add the invoice data to the detail"""
         context = super().get_context_data(**kwargs)
 
         context['salesman']  = context['object'].id_salesman.name
@@ -99,42 +103,57 @@ class SellDetailView(DetailView, LoginRequiredMixin):
         context['products'] = json.loads(context['object'].products)
         context['income']  = context['object'].income
 
-        print('******************************')
-        print(context['invoice_id'])
-        print('******************************')
-        print(context['salesman'])
-        print('******************************')
-        print(context['customer'])
-        print('******************************')
-        print(context['date'])
-        print('******************************')
-        print(context['products'])
-        print('******************************')
-        print(context['income'])
-        print('******************************')
-        print('******************************')
         return context
 
 
 class SearchSellsView(ListView, LoginRequiredMixin):
+    # List Invoice as needed.
     template_name = "sells/search_sales.html"
     model = Sells
-    ordering = ('invoice_id')
+    ordering = ('-invoice_id')
     context_object_name = 'sells'
 
     def get_context_data(self, **kwargs):
+        # Add the filter form into the Context
         context = super().get_context_data(**kwargs)
         context['form'] = SearchFilterForm
         return context
 
-    #def get(self, request):
-    #    super()
-    #    context = self.get_context_data()
+
+    def get_queryset(self, **kwargs):
+        """
+        In This Function I Filter the Sells List in case is needed
+        """
+        query_set = Sells.objects.all()
+        info_get = dict(self.request.GET)
+
+        try:
+            if info_get['salesman'][0] != '-1':
+                # Filter Salesman (Is a Salesman Object, search by PK)
+                query_set = query_set.filter(
+                    id_salesman__exact=Salesman.objects.get(
+                        pk=int(info_get['salesman'][0])
+                    )
+                )
+
+            if info_get['customer'][0] != '':
+                # Filter By Customer (Is a String)
+                query_set = query_set.filter(
+                    customer__contains=info_get['customer'][0]
+                )
+
+            if info_get['invoice'] != '':
+                # Search by Invoice ID
+                # if contains one number of the id is Indexed in list
+                query_set = query_set.filter(
+                    invoice_id__contains=info_get['invoice'][0]
+                )
+
+        except:
+            # If the Filter Form is not in the GET request
+            pass
+
+        return query_set
 
 
 
-def search_sell(request):
-    return render(
-        request,
-        template_name="sells/search_sales.html"
-    )
