@@ -64,13 +64,13 @@
                             </div>
                         </div>
                         <div class="data">
-                            <h3 class="sub-title">
+                            <!--h3 class="sub-title">
                                 Fecha
-                            </h3>
+                            </h3-->
                             <!-- Input Data -->
-                            <div class="bar">
+                            <!--div class="bar">
                                 <input class="inputdata" type="date" name="date" placeholder="DD/MM/AA">
-                            </div>
+                            </div-->
                             <div class="Button">
                                 <button id="Button" type="submit">Filtrar</button>
                             </div>
@@ -90,11 +90,12 @@
                 <div id="boxsales">
                     {% for sell in sells %}
                         <div class="sales">
-                            <a href="/frontend/html/info_sales.html">
+                            <a href="/sells/detail/{{ sell.invoice_id }}/">
                                 <div class="barinfo">
                                     <input class="leftvalue" value="#00000{{ sell.invoice_id }}" readonly>
                                     <input class="rightvalue" type="text" value="{{ sell.id_salesman.name }}"
                                            readonly>
+                                    <input class="leftvalue" type="text" value="{{ sell.customer }}" readonly>
                                     <input class="leftvalue" type="text" value="${{ sell.income }}" readonly>
                                     <input class="rightvalue" type="text" value="{{ sell.date }}" readonly>
                                 </div>
