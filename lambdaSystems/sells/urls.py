@@ -12,7 +12,7 @@ urlpatterns = [
 
     path(
         route='search/',
-        view=views.search_sell,
+        view=views.SearchSellsView.as_view(),
         name='search'
     ),
 

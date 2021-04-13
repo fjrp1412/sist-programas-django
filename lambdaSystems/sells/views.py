@@ -1,12 +1,12 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.forms import formset_factory
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 
 import json
 from datetime import date
 
-from sells.forms import OrderForm, InvoiceForm
+from sells.forms import OrderForm, InvoiceForm, SearchFilterForm
 from sells.models import Sells
 from products.models import Category
 
@@ -113,9 +113,23 @@ class SellDetailView(DetailView, LoginRequiredMixin):
         print(context['income'])
         print('******************************')
         print('******************************')
-
         return context
 
+
+class SearchSellsView(ListView, LoginRequiredMixin):
+    template_name = "sells/search_sales.html"
+    model = Sells
+    ordering = ('invoice_id')
+    context_object_name = 'sells'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = SearchFilterForm
+        return context
+
+    #def get(self, request):
+    #    super()
+    #    context = self.get_context_data()
 
 
 
