@@ -1,89 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        {% load static %}
-        <link
-            rel="stylesheet"
-            href="{%static 'users/css/style_admin_register.css' %}"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Admin Register</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {% load static %}
+    <link
+      rel="stylesheet"
+      href="{%static 'users/css/style_admin_register.css' %}"
+      />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Register</title>
+  </head>
 
-    <body>
-        <!-- Left Side -->
-        <section id="left-side">
-            <img src="" alt="" />
-        </section>
+  <body>
+    <!-- Left Side -->
+    <section id="left-side">
+      <img src="" alt="" />
+    </section>
 
-        <!-- Righ Side -->
-        <section id="righ-side">
-            <!-- Content -->
-            <article>
-                <!-- TitLe -->
-                <div id="Title">
-                    <h1>¡Registrate!</h1>
-                </div>
+    <!-- Righ Side -->
+    <section id="righ-side">
+      <!-- Content -->
+      <article>
+	<!-- TitLe -->
+	<div id="Title">
+	  <h1>¡Registrate!</h1>
+	</div>
 
-                <!-- Data Box -->
+	<!-- Data Box -->
 
-                <form
-                    id="register-box"
-                    action="{% url 'users:signup' %} "
-                    method="POST"
-                >
-                    {% csrf_token %}
-                    <div id="data-box">
-                        <!-- Name -->
-                        <div class="data">
-                            <h3 class="sub-title">Nombre Completo</h3>
-                            <!-- Input Data -->
-                            <div class="bar">{{ form.username }}</div>
-                        </div>
-                        <!-- Bussines Name -->
-                        <div class="data">
-                            <h3 class="sub-title">Nombre del Negocio</h3>
-                            <!-- Input Data -->
-                            <div class="bar">{{ form.company_name }}</div>
-                        </div>
-                        <!-- Personal Email -->
-                        <div class="data">
-                            <h3 class="sub-title">
-                                Correo Electrónico (Personal)
-                            </h3>
-                            <!-- Input Data -->
-                            <div class="bar">{{ form.email_personal }}</div>
-                        </div>
-                        <!-- Bussines Email -->
-                        <div class="data">
-                            <h3 class="sub-title">
-                                Correo Electrónico (Negocio)
-                            </h3>
-                            <!-- Input Data -->
-                            <div class="bar">{{ form.email_company }}</div>
-                        </div>
-                        <!-- Button -->
-                        <div class="Button">
-                            <input
-                                id="Button"
-                                type="submit"
-                                value="Enviar Datos"
-                            />
-                            <a href="/frontend/html/password_admin.html"></a>
-                            <!-- Fix -->
-                        </div>
-                    </div>
-                </form>
+	{% if error %}
+	{{form.error}}
+	{% endif %}
+	<form
+	  id="register-box"
+	  action="{% url 'users:signup' %} "
+	  method="POST"
+	  >
+	  {% csrf_token %}
+	  <div id="data-box">
+	    <!-- Name -->
+	  <div class="data">
+	    <h3 class="sub-title">Nombre Completo</h3>
+	    <!-- Input Data -->
+	    <div class="bar">{{ form.username }}</div>
+	  </div>
 
-                <!-- Go to Log in-->
-                <div id="log-in">
-                    <h3>¿Ya tienes una cuenta?</h3>
-                    <h3><a href="#">Iniciar Sesion</a></h3>
-                </div>
-            </article>
-            <!-- Remenber: Add Footer -->
-        </section>
-    </body>
+	  <!-- Personal Email -->
+	  <div class="data">
+	    <h3 class="sub-title">
+	      Correo Electrónico
+	    </h3>
+	    <!-- Input Data -->
+	    <div class="bar">{{ form.email }}</div>
+	  </div>
+
+	  <div class="data">
+	    <h3 class="sub-title">Cedula</h3>
+	    <!-- Input Data -->
+	    <div class="bar">{{ form.identification_document }}</div>
+
+	  <div class="data">
+	    <h3 class="sub-title">
+	      Contraseña
+	    </h3>
+	    <!-- Input Data -->
+	    <div class="bar">{{ form.password }}</div>
+	  </div>
+
+	  <div class="data">
+	    <h3 class="sub-title">
+	      Repita contraseña
+	    </h3>
+	    <!-- Input Data -->
+	    <div class="bar">{{ form.confirm_password }}</div>
+	  </div>
+	  <!-- Button -->
+	  <div class="Button">
+	    <input
+	      id="Button"
+	      type="submit"
+	      value="Enviar Datos"
+	      />
+	    <!-- Fix -->
+	  </div>
+	  </div>
+	</form>
+	<br>
+	<!-- Go to Log in-->
+	<div id="log-in">
+	  <h3>¿Ya tienes una cuenta?</h3>
+	  <h3><a href="{%url 'users:login' %}">Iniciar Sesion</a></h3>
+	</div>
+      </article>
+      <!-- Remenber: Add Footer -->
+    </section>
+  </body>
 </html>

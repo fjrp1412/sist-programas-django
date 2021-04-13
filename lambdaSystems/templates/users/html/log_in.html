@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <script src="https://kit.fontawesome.com/2a05ff98f9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{%static 'users/css/style_log_in.css' %}">
+  </head>
+  <body>
+    <!-- Left Side -->
+    <section id="left-side">
+      <div class="go-back">
+	<a href=""><i class="fas fa-arrow-circle-left"></i></a>
+      </div>
+      <img src="" alt="">
+    </section>
+
+    <!-- Righ Side -->
+    <section id="righ-side">
+      <!-- Content -->
+      <article>
+	<!-- TitLe -->
+	<div id="Title">
+	  <h1>Ingresa tus Datos</h1>
+	</div>
+
+	<!-- Data Box -->
+
+	<form id="register-box">
+	  <div id="data-box">
+	    <!-- User Email -->
+	    <div class="data">
+	      <h3 class="sub-title">
+		Correo Electrónico
+	      </h3>
+	      <!-- Input Data -->
+	      <div class="bar">
+		<input class="inputdata" type="email" placeholder="Inseret su correo." required>
+	      </div>
+	    </div>
+	    <!-- Password -->
+	    <div class="data">
+	      <h3 class="sub-title">
+		Contraseña
+	      </h3>
+	      <!-- Input Data -->
+	      <div class="bar">
+		<input class="inputdata" type="password" placeholder="Inserte su contraseña." required>
+	      </div>
+	    </div>
+
+	    <div class="Button">
+	      <a id="Button" href="{%url 'users:home' %}">Iniciar Sesión</a>
+	    </div>
+
+	  </div>
+	</form>
+      </article>
+      <!-- Remenber: Add Footer -->
+    </section>
+  </body>
+</html>

@@ -6,5 +6,17 @@ urlpatterns = [
         route='signup/',
         view=views.Signup.as_view(),
         name='signup'
+    ),
+
+    path(
+        route='login/',
+        view=views.LoginView.as_view(),
+        name='login'
+    ),
+
+    path(
+        route='home/',
+        view = views.HomeView.as_view(),
+        name='home'
     )
 ]

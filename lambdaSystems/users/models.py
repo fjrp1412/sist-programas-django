@@ -21,7 +21,7 @@ class Admin(Profile):
 
 class Salesman(Profile):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    count_sells = models.IntegerField()
-    earnings = models.DecimalField(max_digits=10, decimal_places=2)
+    count_sells = models.IntegerField(default=0)
+    earnings = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     seller_id = models.AutoField(
         auto_created=True, primary_key=True, unique=True)
