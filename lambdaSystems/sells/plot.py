@@ -27,17 +27,43 @@ def all_sells_by_salesman(id_salesman):
         id_salesman__exact=salesman
     )
 
-    x_data = [sell.invoice_id for sell in sells]
+    x_data = [f'#000{sell.invoice_id}' for sell in sells]
     y_data = [sell.income for sell in sells]
 
     plt.switch_backend('AGG')
     plt.figure(figsize=(5.2, 4.5))
-    plt.title('Sales By Salesman')
+    plt.title('Ingreso Por Factura Del Vendedor')
     plt.plot(x_data, y_data)
-    plt.ylabel("Income (USD)")
-    plt.xlabel("Sales")
+    plt.xticks(rotation=45)
+    plt.ylabel("Ingreso (USD)")
+    plt.xlabel("Factura")
     plt.tight_layout()
     graph = get_graph()
     return graph
 
 
+def accumulated_by_salesman(id_salesman):
+    salesman = Salesman.objects.get(pk=id_salesman)
+
+    sells = Sells.objects.filter(
+        id_salesman__exact=salesman
+    )
+
+    x_data = [] # [f'#000{sell.invoice_id}' for sell in sells]
+    y_data = [] # [sell.income for sell in sells]
+    aux = 0
+    for sell in sells:
+        x_data.append(f'#000{sell.invoice_id}')
+        aux += sell.income
+        y_data.append(aux)
+
+    plt.switch_backend('AGG')
+    plt.figure(figsize=(5.2, 4.5))
+    plt.title('Acumulado de Ingresos por el Vendedor')
+    plt.plot(x_data, y_data)
+    plt.xticks(rotation=45)
+    plt.ylabel("Ingreso (USD)")
+    plt.xlabel("Factura")
+    plt.tight_layout()
+    graph = get_graph()
+    return graph
