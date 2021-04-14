@@ -52,7 +52,8 @@
                 </button>
             </div>
             <div id = "graph">
-                <img src="sellsBy{{salesman.name}}.png" alt="Aqui deberia estar el Plot">
+                <img src="data:image/png;base64, {{plot|safe}}"
+                     alt="Aqui deberia estar el Plot">
             </div>
         </section>
     </main>

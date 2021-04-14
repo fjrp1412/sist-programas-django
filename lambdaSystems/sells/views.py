@@ -170,12 +170,6 @@ class SellsBySalesman(DetailView, LoginRequiredMixin):
     def get_context_data(self, **kwargs):
         """Add the invoice data to the detail"""
         context = super().get_context_data(**kwargs)
-        # context['name'] = context['salesman'].name
-        # context['id'] = context['salesman'].pk
-        context['all_sells'] = plot.all_sells_by_salesman(context['salesman'].pk)
-        # context['date'] = context['object'].date
-        # context['products'] = json.loads(context['object'].products)
-        # context['income'] = context['object'].income
-        print(context)
+        context['plot'] = plot.all_sells_by_salesman(context['salesman'].pk)
 
         return context
