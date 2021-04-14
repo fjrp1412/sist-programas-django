@@ -9,9 +9,11 @@ from datetime import date
 from sells.forms import OrderForm, InvoiceForm, SearchFilterForm
 from sells.models import Sells
 from products.models import Category
+from users.models import Salesman
+import sells.plot as plot
+
 
 # Extra Functions
-from users.models import Salesman
 
 
 def clean_order_info(order):
@@ -20,19 +22,17 @@ def clean_order_info(order):
         if order[f'form-{i}-product_name'] != '':
             full_order.append(
                 {
-                    "product_name" : order[f'form-{i}-product_name'],
-                    "category" : order[f'form-{i}-category'],
+                    "product_name": order[f'form-{i}-product_name'],
+                    "category": order[f'form-{i}-category'],
                     "base_price": order[f'form-{i}-base_price'],
                     "quantity": order[f'form-{i}-quantity'],
                     "total_price": round(
                         float(order[f'form-{i}-base_price']) *
-                        float( order[f'form-{i}-quantity'])
+                        float(order[f'form-{i}-quantity'])
                         , 2)
                 }
             )
     return full_order
-
-
 
 
 # Create your views here.
@@ -58,7 +58,7 @@ def register_sell(request):
             customer=customer,
             income=income,
             products=products,
-            date = date.today()
+            date=date.today()
         )
         s.save()
         # Redirect to the invoice detail
@@ -71,12 +71,12 @@ def register_sell(request):
                'form2': InvoiceForm
                }
 
-
     return render(
         request,
         template_name="sells/register_sales.html",
         context=context
     )
+
 
 class SellDetailView(DetailView, LoginRequiredMixin):
     """See the Detail of a Sell"""
@@ -96,12 +96,12 @@ class SellDetailView(DetailView, LoginRequiredMixin):
         """Add the invoice data to the detail"""
         context = super().get_context_data(**kwargs)
 
-        context['salesman']  = context['object'].id_salesman.name
+        context['salesman'] = context['object'].id_salesman.name
         context['invoice_id'] = context['object'].invoice_id
-        context['customer']  = context['object'].customer
-        context['date']  = context['object'].date
+        context['customer'] = context['object'].customer
+        context['date'] = context['object'].date
         context['products'] = json.loads(context['object'].products)
-        context['income']  = context['object'].income
+        context['income'] = context['object'].income
 
         return context
 
@@ -118,7 +118,6 @@ class SearchSellsView(ListView, LoginRequiredMixin):
         context = super().get_context_data(**kwargs)
         context['form'] = SearchFilterForm
         return context
-
 
     def get_queryset(self, **kwargs):
         """
@@ -156,4 +155,27 @@ class SearchSellsView(ListView, LoginRequiredMixin):
         return query_set
 
 
+class SellsBySalesman(DetailView, LoginRequiredMixin):
+    template_name = "sells/info_salesman.html"
 
+    # In which base will be the QuerySet made and sent by the URL
+    slug_field = 'pk'
+    slug_url_kwarg = 'pk'
+
+    model = Salesman
+    queryset = Salesman.objects.all()
+
+    context_object_name = 'salesman'
+
+    def get_context_data(self, **kwargs):
+        """Add the invoice data to the detail"""
+        context = super().get_context_data(**kwargs)
+        # context['name'] = context['salesman'].name
+        # context['id'] = context['salesman'].pk
+        context['all_sells'] = plot.all_sells_by_salesman(context['salesman'].pk)
+        # context['date'] = context['object'].date
+        # context['products'] = json.loads(context['object'].products)
+        # context['income'] = context['object'].income
+        print(context)
+
+        return context

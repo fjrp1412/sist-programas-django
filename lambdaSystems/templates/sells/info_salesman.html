@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Information</title>
+    <script src="https://kit.fontawesome.com/2a05ff98f9.js" crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet"
+          href="{% static 'sells/css/style_info_salesman.css'%}">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <h1 id="title">
+            Sistema de Monitoreo
+        </h1>
+        <div class="go-back">
+            <a href="/frontend/html/index.html"><i class="fas fa-arrow-circle-left"></i></a>
+        </div>
+    </header>
+    <main>
+        <section class="left-side">
+            <div id="box-info">
+                <div class="seller">
+                    <img src="/frontend/images/pexels-tuấn-kiệt-jr-1382731.jpg" alt="">
+                </div>
+                <h2 class="name">
+                    {{salesman.name}}
+                </h2>
+                <div class="information">
+                    <h3>
+                        22 Años
+                    </h3>
+                    <h3>
+                        Mujer
+                    </h3>
+                    <h3>
+                        DD/MM/AA
+                    </h3>
+                </div>
+            </div>
+        </section>
+        <section class="right-side">
+            <div class="buttons">
+                <button id="sales">
+                    <a href="#">Ventas Totales</a> 
+                </button>
+                <button id="income">
+                    <a href="#">Ingresos Acumulados</a>
+                </button>
+            </div>
+            <div id = "graph">
+                <img src="sellsBy{{salesman.name}}.png" alt="Aqui deberia estar el Plot">
+            </div>
+        </section>
+    </main>
+</body>
+</html>
