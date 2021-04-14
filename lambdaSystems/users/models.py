@@ -25,3 +25,8 @@ class Salesman(Profile):
     earnings = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     seller_id = models.AutoField(
         auto_created=True, primary_key=True, unique=True)
+    picture = models.ImageField(
+        upload_to="users/pictures",
+        blank=True,
+        null=True
+    )

@@ -21,7 +21,7 @@ class InvoiceForm(forms.Form):
     SALESMAN = []
     s_list = Salesman.objects.all()
     for s in s_list:
-        SALESMAN.append((s.pk,s.name))
+        SALESMAN.append((s.pk, s.name))
 
 
 
