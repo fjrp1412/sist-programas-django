@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from django.views import View
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from users.forms import SignupForm
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -40,21 +40,12 @@ class LoginView(auth_views.LoginView):
     template_name = 'users/html/log_in.html'
 
 
-class HomeView(View, LoginRequiredMixin):
+class HomeView(ListView, LoginRequiredMixin):
     """View for home page."""
     template_name = 'users/html/index.html'
-
-    def get(self, request):
-        return render(
-            request=request,
-            template_name=self.template_name,
-        )
-
-    def post(self, request):
-        return render(
-            request=request,
-            template_name=self.template_name,
-        )
+    model = Salesman
+    ordering = ('seller_id',)
+    context_object_name = 'salesmans'
 
 
 class UpdateSalesman(UpdateView, LoginRequiredMixin):

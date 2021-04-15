@@ -1,5 +1,6 @@
 from django.db import models as m
 
+
 # Create your models here.
 
 class Sells(m.Model):
@@ -35,6 +36,7 @@ class Sells(m.Model):
     def __str__(self):
         return f"Invoice Number: {self.invoice_id}, date: {self.date}, salesman: {self.id_salesman}, \nproducts:" \
                f" {self.products},\ndescription: {self.description}  "
+
 
 class Order(m.Model):
     """

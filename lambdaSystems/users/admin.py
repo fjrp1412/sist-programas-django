@@ -19,10 +19,12 @@ class AdminAdmin(admin.ModelAdmin):
 
 @admin.register(Salesman)
 class SalesmanAdmin(admin.ModelAdmin):
-    """Admin for Sellerman users."""
+    """Admin for Salesman users."""
     list_display = ('pk', 'user', 'identification_document',
                     'name', 'created', 'last_modified',
-                    'count_sells', 'earnings')
+                    'count_sells', 'earnings', 'picture')
+
+    list_editable = ('name', 'picture')
 
 
 class UserAdmin(BaseUserAdmin):
