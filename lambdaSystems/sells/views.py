@@ -10,7 +10,6 @@ from sells.forms import OrderForm, InvoiceForm, SearchFilterForm
 from sells.models import Sells
 from products.models import Category
 from users.models import Salesman
-import sells.plot as plot
 
 
 # Extra Functions
@@ -79,9 +78,8 @@ def register_sell(request):
 
 
 class SellDetailView(DetailView, LoginRequiredMixin):
-    #See the Detail of a Sell
+    # See the Detail of a Sell
 
-    
     template_name = 'sells/info_sales.html'
 
     # In which base will be the QuerySet made and sent by the URL
@@ -94,7 +92,7 @@ class SellDetailView(DetailView, LoginRequiredMixin):
     context_object_name = 'invoice_id'
 
     def get_context_data(self, **kwargs):
-#        Add the invoice data to the detail
+        #        Add the invoice data to the detail
         context = super().get_context_data(**kwargs)
 
         context['salesman'] = context['object'].id_salesman.name
@@ -121,7 +119,7 @@ class SearchSellsView(ListView, LoginRequiredMixin):
         return context
 
     def get_queryset(self, **kwargs):
-#        In This Function I Filter the Sells List in case is needed
+        #        In This Function I Filter the Sells List in case is needed
         query_set = Sells.objects.all()
         info_get = dict(self.request.GET)
 
@@ -152,25 +150,3 @@ class SearchSellsView(ListView, LoginRequiredMixin):
             pass
 
         return query_set
-
-
-class SellsBySalesman(DetailView, LoginRequiredMixin):
-    template_name = "sells/info_salesman.html"
-
-    # In which base will be the QuerySet made and sent by the URL
-    slug_field = 'pk'
-    slug_url_kwarg = 'pk'
-
-    model = Salesman
-    queryset = Salesman.objects.all()
-
-    context_object_name = 'salesman'
-
-    def get_context_data(self, **kwargs):
-        #Add the invoice data to the detail
-        context = super().get_context_data(**kwargs)
-        # context['plot'] = plot.all_sells_by_salesman(context['salesman'].pk)
-
-        context['plot'] = plot.accumulated_by_salesman(context['salesman'].pk)
-
-        return context
