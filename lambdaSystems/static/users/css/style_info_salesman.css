@@ -127,8 +127,8 @@ main{
 #graph{
     border: rgb(235, 196, 26) 5px solid;
     background: #0a83a1;
-    height: 80%;
-    width: 90%;
+    height: 68%;
+    width: 61%;
     margin: auto;
     box-shadow: 0px 5px 15px 5px rgba(78, 77, 80, 0.349);
 }

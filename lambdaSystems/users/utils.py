@@ -31,7 +31,7 @@ def all_sells_by_salesman(id_salesman):
     y_data = [sell.income for sell in sells]
 
     plt.switch_backend('AGG')
-    plt.figure(figsize=(5.2, 4.5))
+    plt.figure(figsize=(6.1, 4.9))
     plt.title('Ingreso Por Factura Del Vendedor')
     plt.plot(x_data, y_data)
     plt.xticks(rotation=45)
@@ -49,8 +49,8 @@ def accumulated_by_salesman(id_salesman):
         id_salesman__exact=salesman
     )
 
-    x_data = [] # [f'#000{sell.invoice_id}' for sell in sells]
-    y_data = [] # [sell.income for sell in sells]
+    x_data = []
+    y_data = []
     aux = 0
     for sell in sells:
         x_data.append(f'#000{sell.invoice_id}')
@@ -58,7 +58,7 @@ def accumulated_by_salesman(id_salesman):
         y_data.append(aux)
 
     plt.switch_backend('AGG')
-    plt.figure(figsize=(5.2, 4.5))
+    plt.figure(figsize=(6.1, 4.9))
     plt.title('Acumulado de Ingresos por el Vendedor')
     plt.plot(x_data, y_data)
     plt.xticks(rotation=45)
