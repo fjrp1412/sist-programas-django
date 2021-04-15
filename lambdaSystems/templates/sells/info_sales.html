@@ -1,108 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Information</title>
     {% load static %}
     <link rel="stylesheet"
-          href="{% static 'sells/css/style_info_sales.css'%}">
+	  href="{% static 'sells/css/style_info_sales.css'%}">
     <script src="https://kit.fontawesome.com/2a05ff98f9.js" crossorigin="anonymous"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header id="header">
-        <h1 id="title">
-            Venta Detallada
-        </h1>
-        <div class="go-back">
-            <a href="/sells/search/"><i class="fas fa-arrow-circle-left"></i></a>
-        </div>
+      <h1 id="title">
+	Venta Detallada
+      </h1>
+      <div class="go-back">
+	<a href="{%url 'sells:search'%}"><i class="fas fa-arrow-circle-left"></i></a>
+      </div>
     </header>
     <main>
-        <section class="box-register">
-            <div class="left-side">
-                <div class="data">
-                    <h3 class="sub-title">
-                        Nº Factura
-                    </h3>
-                    <!-- Input Data -->
-                    <div class="bar">
-                        <input class="inputdata" type="text" value="#00000{{invoice_id}}" readonly>
-                    </div>
-                </div>
-                <div class="data">
-                    <h3 class="sub-title">
-                        Cliente
-                    </h3>
-                    <!-- Input Data -->
-                    <div class="bar">
-                        <input class="inputdata" type="text" value="{{customer}}" required readonly>
-                    </div>
-                </div>
-                <div class="data">
-                    <h3 class="sub-title">
-                        Vendedor 
-                    </h3>
-                    <!-- Input Data -->
-                    <div class="bar">
-                        <input class="inputdata" type="text" value="{{salesman}}" readonly>
-                    </div>
-                </div>
-                <div class="data">
-                    <h3 class="sub-title">
-                        Fecha 
-                    </h3>
-                    <!-- Input Data -->
-                    <div class="bar">
-                        <input class="inputdata" type="text" value="{{date}}" readonly>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="center-side">
-                <div class="list-label">
-                    <h3 class="sub-title">
-                        Productos 
-                    </h3>
-                    <h3 class="sub-title">
-                        Rubro
-                    </h3>
-                    <h3 class="sub-title">
-                        Precio Neto 
-                    </h3>
-                    <h3 class="sub-title">
-                        Cantidad
-                    </h3>
-                    <h3 class="sub-title" id="total">
-                        Total
-                    </h3>
-                </div>
-                <!-- Input Data -->
-                <div class="inputdata">
-                    <table>
-                            {% for list in products %}
-                                <tr>
-                                    {% for key, value in list.items %}
-                                        <td>
-                                            <input type="text" value="{{value}}" readonly>
-                                        </td>
-                                    {% endfor %}
-                                </tr>
-                            {% endfor %}
-                        <td></td><td></td><td></td><td></td>
-                        <td>
-                             <input type="text" value="{{income}}" readonly>
-                        </td>
+      <section class="box-register">
+	<div class="left-side">
+	  <div class="data">
+	    <h3 class="sub-title">
+	      Nº Factura
+	    </h3>
+	    <!-- Input Data -->
+	    <div class="bar">
+	      <input class="inputdata" type="text" value="#00000{{invoice_id}}" readonly>
+	    </div>
+	  </div>
+	  <div class="data">
+	    <h3 class="sub-title">
+	      Cliente
+	    </h3>
+	    <!-- Input Data -->
+	    <div class="bar">
+	      <input class="inputdata" type="text" value="{{customer}}" required readonly>
+	    </div>
+	  </div>
+	  <div class="data">
+	    <h3 class="sub-title">
+	      Vendedor
+	    </h3>
+	    <!-- Input Data -->
+	    <div class="bar">
+	      <input class="inputdata" type="text" value="{{salesman}}" readonly>
+	    </div>
+	  </div>
+	  <div class="data">
+	    <h3 class="sub-title">
+	      Fecha
+	    </h3>
+	    <!-- Input Data -->
+	    <div class="bar">
+	      <input class="inputdata" type="text" value="{{date}}" readonly>
+	    </div>
+	  </div>
+	</div>
 
-                    </table>
-                </div>
-            </div>
-            <div class="Button">
-                <a id="Button" type="Button" href="">Ir al menu</a>
-            </div>
-        </section>
+	<div class="center-side">
+	  <div class="list-label">
+	    <h3 class="sub-title">
+	      Productos
+	    </h3>
+	    <h3 class="sub-title">
+	      Rubro
+	    </h3>
+	    <h3 class="sub-title">
+	      Precio Neto
+	    </h3>
+	    <h3 class="sub-title">
+	      Cantidad
+	    </h3>
+	    <h3 class="sub-title" id="total">
+	      Total
+	    </h3>
+	  </div>
+	  <!-- Input Data -->
+	  <div class="inputdata">
+	    <table>
+	      {% for list in products %}
+	      <tr>
+		{% for key, value in list.items %}
+		<td>
+		  <input type="text" value="{{value}}" readonly>
+		</td>
+		{% endfor %}
+	      </tr>
+	      {% endfor %}
+	      <td></td><td></td><td></td><td></td>
+	      <td>
+		<input type="text" value="{{income}}" readonly>
+	      </td>
+
+	    </table>
+	  </div>
+	</div>
+	<div class="Button">
+	  <a id="Button" type="Button" href="">Ir al menu</a>
+	</div>
+      </section>
     </main>
-    
-</body>
+
+  </body>
 </html>

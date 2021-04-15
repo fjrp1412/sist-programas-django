@@ -11,7 +11,7 @@ class SignupForm(forms.Form):
         label=False,
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Luis Francisco Garcia Chachati Chang',
+                'placeholder': 'Inserte su nombre.',
                 'class': 'inputdata',
                 'required': True
             }
@@ -22,7 +22,7 @@ class SignupForm(forms.Form):
         label=False,
         widget=forms.EmailInput(
             attrs={
-                'placeholder': 'lfgchang@gmail.com',
+                'placeholder': 'Correo electronico.',
                 'class': 'inputdata',
                 'required': True
             }
@@ -60,7 +60,7 @@ class SignupForm(forms.Form):
         label=False,
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Inserte su cedula',
+                'placeholder': 'Inserte su cedula.',
                 'class': 'inputdata',
                 'required': True
             }

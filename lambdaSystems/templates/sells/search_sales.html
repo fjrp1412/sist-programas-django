@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,103 +8,103 @@
     <script src="https://kit.fontawesome.com/2a05ff98f9.js" crossorigin="anonymous"></script>
     {% load static %}
     <link rel="stylesheet"
-          href="{% static 'sells/css/style_search_sales.css' %}" />
-</head>
-<body>
+	  href="{% static 'sells/css/style_search_sales.css' %}" />
+  </head>
+  <body>
     <header id="header">
-        <h1 id="title">
-            Información de Ventas
-        </h1>
-        <div class="go-back">
-            <a href="/frontend/html/index.html"><i class="fas fa-arrow-circle-left"></i></a>
-        </div>
+      <h1 id="title">
+	Información de Ventas
+      </h1>
+      <div class="go-back">
+	<a href="{%url 'users:home' %}"><i class="fas fa-arrow-circle-left"></i></a>
+      </div>
     </header>
     <main id="content">
-        <h1 id="Title">
-            
-        </h1>
-        <div class="box">
-            <div class="left-side">
-                <h2>
-                    Filtros de Busqueda
-                </h2>
-                <form method="GET">
-                    <div class="filter">
-                        <div class="data">
-                            <h3 class="sub-title">
-                                Nº Factura
-                            </h3>
-                            <!-- Input Data -->
-                            <div class="bar">
-                                <input class="inputdata" type="number" name="invoice" placeholder="#000000000" >
-                            </div>
-                        </div>
-                        <div class="data">
-                            <h3 class="sub-title">
-                                Cliente
-                            </h3>
-                            <!-- Input Data -->
-                            <div class="bar">
-                                <!--input class="inputdata" type="text" name="customer" placeholder="Joan Marquez" -->
-                                {{ form.customer }}
-                            </div>
-                        </div>
-                        <div class="data">
-                            <h3 class="sub-title">
-                                Vendedor
-                            </h3>
-                            <!-- Input Data -->
-                            <div class="bar">
-                                {{ form.salesman }}
-                                <!--select class="inputdata">
-                                    <option value="Ana Chang">Ana Chang</option>
-                                    <option value="Paty Rodriguez">Paty Rodriguez</option>
-                                    <option value="Andrés Cabrera">Andrés Cabrera</option>
-                                </select-->
-                            </div>
-                        </div>
-                        <div class="data">
-                            <!--h3 class="sub-title">
-                                Fecha
-                            </h3-->
-                            <!-- Input Data -->
-                            <!--div class="bar">
-                                <input class="inputdata" type="date" name="date" placeholder="DD/MM/AA">
-                            </div-->
-                            <div class="Button">
-                                <button id="Button" type="submit">Filtrar</button>
-                            </div>
-                        </div>
+      <h1 id="Title">
 
-                    </div>
+      </h1>
+      <div class="box">
+	<div class="left-side">
+	  <h2>
+	    Filtros de Busqueda
+	  </h2>
+	  <form method="GET">
+	    <div class="filter">
+	      <div class="data">
+		<h3 class="sub-title">
+		  Nº Factura
+		</h3>
+		<!-- Input Data -->
+		<div class="bar">
+		  <input class="inputdata" type="number" name="invoice" placeholder="#000000000" >
+		</div>
+	      </div>
+	      <div class="data">
+		<h3 class="sub-title">
+		  Cliente
+		</h3>
+		<!-- Input Data -->
+		<div class="bar">
+		  <!--input class="inputdata" type="text" name="customer" placeholder="Joan Marquez" -->
+		  {{ form.customer }}
+		</div>
+	      </div>
+	      <div class="data">
+		<h3 class="sub-title">
+		  Vendedor
+		</h3>
+		<!-- Input Data -->
+		<div class="bar">
+		  {{ form.salesman }}
+		  <!--select class="inputdata">
+      <option value="Ana Chang">Ana Chang</option>
+      <option value="Paty Rodriguez">Paty Rodriguez</option>
+      <option value="Andrés Cabrera">Andrés Cabrera</option>
+      </select-->
+		</div>
+	      </div>
+	      <div class="data">
+		<!--h3 class="sub-title">
+    Fecha
+    </h3-->
+    <!-- Input Data -->
+    <!--div class="bar">
+      <input class="inputdata" type="date" name="date" placeholder="DD/MM/AA">
+      </div-->
+      <div class="Button">
+	<button id="Button" type="submit">Filtrar</button>
+      </div>
+	    </div>
 
-                </form>
-            </div>
+	</div>
+
+	  </form>
+      </div>
 
 
 
-            <div class="right-side">
-                <h2>
-                    Ventas Realizadas
-                </h2>
-                <div id="boxsales">
-                    {% for sell in sells %}
-                        <div class="sales">
-                            <a href="/sells/detail/{{ sell.invoice_id }}/">
-                                <div class="barinfo">
-                                    <input class="leftvalue" value="#00000{{ sell.invoice_id }}" readonly>
-                                    <input class="rightvalue" type="text" value="{{ sell.id_salesman.name }}"
-                                           readonly>
-                                    <input class="leftvalue" type="text" value="{{ sell.customer }}" readonly>
-                                    <input class="leftvalue" type="text" value="${{ sell.income }}" readonly>
-                                    <input class="rightvalue" type="text" value="{{ sell.date }}" readonly>
-                                </div>
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </main> 
-</body>
+      <div class="right-side">
+	<h2>
+	  Ventas Realizadas
+	</h2>
+	<div id="boxsales">
+	  {% for sell in sells %}
+	  <div class="sales">
+	    <a href="/sells/detail/{{ sell.invoice_id }}/">
+	      <div class="barinfo">
+		<input class="leftvalue" value="#00000{{ sell.invoice_id }}" readonly>
+		<input class="rightvalue" type="text" value="{{ sell.id_salesman.name }}"
+						      readonly>
+		<input class="leftvalue" type="text" value="{{ sell.customer }}" readonly>
+		<input class="leftvalue" type="text" value="${{ sell.income }}" readonly>
+		<input class="rightvalue" type="text" value="{{ sell.date }}" readonly>
+	      </div>
+	    </a>
+	  </div>
+	  {% endfor %}
+	</div>
+      </div>
+      </div>
+    </main>
+  </body>
 </html>
