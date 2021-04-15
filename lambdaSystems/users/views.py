@@ -53,9 +53,13 @@ class UpdateSalesman(UpdateView, LoginRequiredMixin):
     model = Salesman
     template_name = 'users/html/update_salesman.html'
     fields = ['name', 'identification_document', 'picture']
+    
+    def post(self, request):
+        super()
+        print(self.request.POST)
 
-    def get_object(self, queryset=None):
-        return self.request.user.salesman
+#    def get_object(self, queryset=None):
+#       return self.request.user.salesman
 
     def get_success_url(self):
         return reverse('users:home')
