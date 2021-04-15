@@ -85,12 +85,3 @@ class SignupForm(forms.Form):
             raise forms.ValidationError('Passwords do not match')
 
         return data
-
-
-class UpdateForm(forms.ModelForm):
-    class Meta:
-        model = Salesman
-        fields = [
-            'name',
-            'picture'
-        ]

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.views import View
 from django.views.generic import DetailView, ListView
-from users.forms import SignupForm, UpdateForm
+from users.forms import SignupForm
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView
@@ -51,8 +51,8 @@ class HomeView(ListView, LoginRequiredMixin):
 class UpdateSalesman(UpdateView, LoginRequiredMixin):
     """View for update a salesman user"""
     model = Salesman
+    fields = ('name', 'picture')
     template_name = 'users/html/update_salesman.html'
-    form_class = UpdateForm
     slug_field = 'pk'
     slug_url_kwarg = 'pk'
 
