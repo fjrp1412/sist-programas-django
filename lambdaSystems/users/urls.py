@@ -21,7 +21,7 @@ urlpatterns = [
     ),
 
     path(
-        route='update/',
+        route='update/<int:pk>/',
         view=views.UpdateSalesman.as_view(),
         name='update'
     ),

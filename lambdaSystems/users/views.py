@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.views import View
 from django.views.generic import DetailView, ListView
-from users.forms import SignupForm
+from users.forms import SignupForm, UpdateForm
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView
@@ -52,14 +52,9 @@ class UpdateSalesman(UpdateView, LoginRequiredMixin):
     """View for update a salesman user"""
     model = Salesman
     template_name = 'users/html/update_salesman.html'
-    fields = ['name', 'identification_document', 'picture']
-    
-    def post(self, request):
-        super()
-        print(self.request.POST)
-
-#    def get_object(self, queryset=None):
-#       return self.request.user.salesman
+    form_class = UpdateForm
+    slug_field = 'pk'
+    slug_url_kwarg = 'pk'
 
     def get_success_url(self):
         return reverse('users:home')

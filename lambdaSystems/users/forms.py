@@ -4,7 +4,6 @@ from users.models import Salesman
 
 
 class SignupForm(forms.Form):
-
     username = forms.CharField(
         min_length=5,
         max_length=50,
@@ -86,3 +85,12 @@ class SignupForm(forms.Form):
             raise forms.ValidationError('Passwords do not match')
 
         return data
+
+
+class UpdateForm(forms.ModelForm):
+    class Meta:
+        model = Salesman
+        fields = [
+            'name',
+            'picture'
+        ]
