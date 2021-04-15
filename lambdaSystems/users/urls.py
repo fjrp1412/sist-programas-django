@@ -24,6 +24,18 @@ urlpatterns = [
         route='update/<int:pk>/',
         view=views.UpdateSalesman.as_view(),
         name='update'
+    ),
+
+    path(
+        route='detail/<int:pk>/0/',
+        view=views.DetailSalesmanSells.as_view(),
+        name='salesman_sells'
+    ),
+
+    path(
+        route='detail/<int:pk>/1/',
+        view=views.DetailSalesmanAccumulated.as_view(),
+        name='salesman_accumulated'
     )
 
 ]

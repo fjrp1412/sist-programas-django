@@ -17,13 +17,8 @@ urlpatterns = [
 
     path(
         route='detail/<int:pk>/',
-        view=views.SellDetailView.as_view(),
+        view=views.DetailView.as_view(),
         name='detail'
     ),
 
-    path(
-        route='salesman/<int:pk>/',
-        view=views.SellsBySalesman.as_view(),
-        name='salesman'
-    )
 ]
