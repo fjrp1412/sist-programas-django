@@ -2,136 +2,91 @@
     margin: 0px;
 }
 
+#title{
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    display: inline-block;
+    width: 95%;
+    margin: 15px 0px 15px 0px;
+}
 
 .go-back{
-    text-decoration: none;
     font-size: 55px;
     display: inline-block;
-    position: relative;
-    left: 10px;
-    top: 6px;
+    padding: 5px;
 }
 
 .go-back >a{
-    color: #0c667c;
-}
-
-#header{
-    background: linear-gradient(90.88deg, #32B8CA -17.16%, #183D9A 125.57%);
-    box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.25);
-    height: 10vh;
-
-}
-
-#title{
-    position: absolute;
-    left: 8vw;
-    top: 2vh;
-    font-size: 45px;
-    font-weight: bold;
-    color: #FFFFFF;
+    color: #5ecffc;
 }
 
 body{
-    background: #2c2b2b;
+    background: linear-gradient(116.82deg, #2C50CD 1.46%, #D823DC 100%);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
 }
 
-#Title{
+.box{
+    width:60%;
+    margin: auto;
+    background: linear-gradient(359.59deg, #5934C0 0.46%, rgba(82, 62, 144, 0.7) 32.45%, rgba(89, 71, 156, 0.309524) 66.32%, rgba(93, 75, 162, 0) 90.78%);
+    border-radius: 35px;
+    border: 2px solid rgb(71, 4, 92);
+    box-shadow: 0px 2px 10px 0px  rgba(55, 3, 153, 0.897);
+}
+
+#photo{
+    width: 80%;
+    margin: auto;
     text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: #FFFFFF;
-    margin: 20px;
 }
 
-.box-register{
-    background: linear-gradient(180deg, #0d94d3, #1441d4, #071a4e );
-    border: 6px solid #ccd3da;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    width: 90%;
-    padding:10px;
+#photo h3{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+img{
+    width:25%;
+    border-radius: 20px;
+    margin: 10px auto;
+    box-shadow: 0px 5px 15px 1px rgb(19, 11, 29);
+}
+
+.inputs{
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
     margin: auto;
 }
 
-.left-side{
-    display: inline-block;
-}
-
 .data{
-    padding: 15px 0px 0px 0px;
-    color: rgb(255, 255, 255);
-    align-content: center;
-    align-items: center;
+    display: inline-block;
+    margin: 20px 0px 10px 0px;
+    
 }
 
 .sub-title{
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
-}
-
-.bar{
-    margin: 10px 0px;
-    text-align: center;
+    margin: 0px 0px 10px 0px;
 }
 
 .inputdata{
     /*font-family: Roboto Slab;*/
     font-weight: bold;
-    font-size: 20px;
-    height: 40px;
+    font-size: 18px;
+    height: 35px;
     width: 75%;
+    padding: 0px 15px;
     background: rgb(255, 255, 255);
-    box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.301);
+    box-shadow: 2px 2px 4px 0px rgb(38, 4, 83);
     border-radius: 15px;
     text-align: center;
-}
-
-
-.center-side{
-    width: 75.5%;
-    display: inline-block;
-    position: relative;
-    top: 15px;
-    
-}
-
-
-.list-label >.sub-title{
-    display: inline-block;
-    font-size: 25px;
-    margin: 0px 49px 5px 49px;
-    color: #FFFFFF;
-}
-
-#total{
-    margin-left: 85px;
-    color: #FFFFFF;
-}
-
-.center-side .inputdata{
-    /*font-family: Roboto Slab;*/
-    margin-top: 5px;
-    height: 370px;
-    width: 100%;
-    background: linear-gradient(360deg,#54fd11,#2bbe57);
-    box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.301);
-    border-radius: 15px;
-    border: 2px solid #0a3d1a;
-    text-align: center;
-    overflow-y: scroll;
-}
-
-.center-side input{
-    text-align: center;
-    margin: 10px 0px 0px 0px;
-    border-radius: 5px;
-    padding: 10px 0px;
-    width: 180px;
-    font-size: 15px;
-    margin: 10px 5px;
 }
 
 .Button{
@@ -142,13 +97,13 @@ body{
 
 #Button{
     text-decoration: none;
-    color: #071a4e;
-    font-size: 25px;
+    color: #06dcf8;
+    font-size: 20px;
     font-weight: bold;
     width: 40%;
-    padding: 6px 20px;
-    background: linear-gradient(180deg, rgb(60, 214, 189), rgb(12, 132, 136));
-    border: 3px solid #0ec0df;
-    box-shadow: 0px 0px 10px 1px rgba(120, 224, 255, 0.678);
-    border-radius: 6px;
+    padding: 5px 25px;
+    border: 2px solid #0947a5;
+    background: linear-gradient(180deg,rgb(10, 107, 233),#0947a5);
+    box-shadow: 0px 3px 15px 3px rgba(6, 34, 128, 0.856);
+    border-radius: 10px;
 }
