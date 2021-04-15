@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,67 +8,67 @@
     <script src="https://kit.fontawesome.com/2a05ff98f9.js" crossorigin="anonymous"></script>
     {% load static %}
     <link rel="stylesheet"
-          href="{% static 'users/css/style_info_salesman.css'%}">
-</head>
-<body>
+	  href="{% static 'users/css/style_info_salesman.css'%}">
+  </head>
+  <body>
     <!-- Header -->
     <header id="header">
-        <h1 id="title">
-            Sistema de Monitoreo
-        </h1>
-        <div class="go-back">
-            <a href="{%url 'users:home' %}"><i class="fas fa-arrow-circle-left"></i></a>
-        </div>
+      <h1 id="title">
+	Sistema de Monitoreo
+      </h1>
+      <div class="go-back">
+	<a href="{%url 'users:home' %}"><i class="fas fa-arrow-circle-left"></i></a>
+      </div>
     </header>
     <main>
-        <section class="left-side">
-            <div id="box-info">
-                <div class="seller">
-		  <img src="{{ salesman.picture.url }}" alt="">
-                </div>
-                <h2 class="name">
-                    {{salesman.name}}
-                </h2>
-                <div class="information">
-                    <h3>
-                        Ventas Realizadas
-                    </h3>
-                    <h5>
-                        {{salesman.count_sells}}
-                    </h5>
-                    <h3>
-                        Ingresos Generados
-                    </h3>
-                    <h5>
-                        $ {{salesman.earnings}}
-                    </h5>
-                    <h3>
-                        Trabajando Desde
-                    </h3>
-                    <h5>
-                        {{salesman.created}}
-                    </h5>
-                </div>
-            <div class="buttons">
-                <button id="income">
-                    <a href="/users/update/{{ salesman.pk }}/">Actualizar vendedor</a>
-                </button>
-            </div>
-            </div>
-        </section>
-        <section class="right-side">
-            <div class="buttons">
-                <button id="sales">
-                    <a href="/users/detail/{{ salesman.pk }}/0/">Ventas Totales</a>
-                </button>
-                <button id="income">
-                    <a href="/users/detail/{{ salesman.pk }}/1/">Ingresos Acumulados</a>
-                </button>
-            </div>
-            <div id = "graph"
-                 style="background-image: url('data:image/png;base64, {{plot|safe}}'); background-size=cover; background-repeat: no-repeat">
-            </div>
-        </section>
+      <section class="left-side">
+	<div id="box-info">
+	  <div class="seller">
+	    <img src="{{ salesman.picture.url }}" alt="">
+	  </div>
+	  <h2 class="name">
+	    {{salesman.name}}
+	  </h2>
+	  <div class="information">
+	    <h3>
+	      Ventas Realizadas
+	    </h3>
+	    <h5>
+	      {{salesman.count_sells}}
+	    </h5>
+	    <h3>
+	      Ingresos Generados
+	    </h3>
+	    <h5>
+	      $ {{salesman.earnings}}
+	    </h5>
+	    <h3>
+	      Trabajando Desde
+	    </h3>
+	    <h5>
+	      {{salesman.created}}
+	    </h5>
+	  </div>
+	  <div class="buttons">
+	    <button id="income">
+	      <a href="/users/update/{{ salesman.pk }}/">Actualizar vendedor</a>
+	    </button>
+	  </div>
+	</div>
+      </section>
+      <section class="right-side">
+	<div class="buttons">
+	  <button id="sales">
+	    <a href="/users/detail/{{ salesman.pk }}/0/">Ventas Totales</a>
+	  </button>
+	  <button id="income">
+	    <a href="/users/detail/{{ salesman.pk }}/1/">Ingresos Acumulados</a>
+	  </button>
+	</div>
+	<div id = "graph"
+	     style="background-image: url('data:image/png;base64, {{plot|safe}}'); background-size: cover; background-repeat: no-repeat">
+	</div>
+      </section>
     </main>
-</body>
+  </body>
 </html>
