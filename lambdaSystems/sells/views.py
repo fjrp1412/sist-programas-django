@@ -1,3 +1,5 @@
+import decimal
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.forms import formset_factory
@@ -12,9 +14,7 @@ from products.models import Category
 from users.models import Salesman
 
 
-# Extra Functions
-
-
+# Extra Function
 def clean_order_info(order):
     full_order = []
     for i in range(6):
@@ -41,27 +41,33 @@ def register_sell(request):
         # Clean the data in the Sell and calculate what is needed
         data_dict = request.POST.dict()
         order_info = clean_order_info(data_dict)
+        if order_info:
+            salesman = Salesman.objects.get(pk=int(data_dict['salesman']))
+            customer = data_dict['customer']
+            income = 0
+            for order in order_info:
+                income += order['total_price']
+            products = json.dumps(order_info)
 
-        salesman = Salesman.objects.get(pk=int(data_dict['salesman']))
-        customer = data_dict['customer']
-        income = 0
-        for order in order_info:
-            income += order['total_price']
-        products = json.dumps(order_info)
+            # Create and save the Sell Instance
+            s = Sells(
+                invoice_id=invoice_id,
+                id_category=Category.objects.get(pk=6),
+                id_salesman=salesman,
+                customer=customer,
+                income=income,
+                products=products,
+                date=date.today()
+            )
+            s.save()
 
-        # Create and save the Sell Instance
-        s = Sells(
-            invoice_id=invoice_id,
-            id_category=Category.objects.get(pk=6),
-            id_salesman=salesman,
-            customer=customer,
-            income=income,
-            products=products,
-            date=date.today()
-        )
-        s.save()
-        # Redirect to the invoice detail
-        return redirect(f"/sells/detail/{invoice_id}/")
+            # Update Salesman Data
+            salesman.count_sells += 1
+            salesman.earnings += decimal.Decimal(s.income)
+            salesman.save()
+
+            # Redirect to the invoice detail
+            return redirect(f"/sells/detail/{invoice_id}/")
 
     # Add the forms to add products orders
     order_form_set = formset_factory(OrderForm, extra=6)
