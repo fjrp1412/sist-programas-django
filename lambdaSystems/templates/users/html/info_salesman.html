@@ -17,7 +17,7 @@
             Sistema de Monitoreo
         </h1>
         <div class="go-back">
-            <a href="/frontend/html/index.html"><i class="fas fa-arrow-circle-left"></i></a>
+            <a href="{%url 'users:home' %}"><i class="fas fa-arrow-circle-left"></i></a>
         </div>
     </header>
     <main>
@@ -31,29 +31,37 @@
                 </h2>
                 <div class="information">
                     <h3>
-                        22 Años
+                        Ventas Realizadas
                     </h3>
+                    <h5>
+                        {{salesman.count_sells}}
+                    </h5>
                     <h3>
-                        Mujer
+                        Ingresos Generados
                     </h3>
+                    <h5>
+                        $ {{salesman.earnings}}
+                    </h5>
                     <h3>
-                        DD/MM/AA
+                        Trabajando Desde
                     </h3>
+                    <h5>
+                        {{salesman.created}}
+                    </h5>
                 </div>
             </div>
         </section>
         <section class="right-side">
             <div class="buttons">
                 <button id="sales">
-                    <a href="#">Ventas Totales</a> 
+                    <a href="/users/detail/{{ salesman.pk }}/0/">Ventas Totales</a>
                 </button>
                 <button id="income">
-                    <a href="#">Ingresos Acumulados</a>
+                    <a href="/users/detail/{{ salesman.pk }}/1/">Ingresos Acumulados</a>
                 </button>
             </div>
-            <div id = "graph">
-                <img src="data:image/png;base64, {{plot|safe}}"
-                     alt="Aqui deberia estar el Plot">
+            <div id = "graph"
+                 style="background-image: url('data:image/png;base64, {{plot|safe}}'); background-size=cover; background-repeat: no-repeat">
             </div>
         </section>
     </main>
