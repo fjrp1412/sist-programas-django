@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  {% load static %}
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <!-- Header -->
     <header id="header">
       <h1 id="title">
-      Sistema de Monitoreo
+	Sistema de Monitoreo
       </h1>
       <div class="go-back">
 	<a href="/frontend/html/log_in.html"><i class="fas fa-arrow-circle-left"></i></a>
@@ -22,31 +22,31 @@
     <!-- Nav Bar -->
     <nav id="navegation">
       <el class="menu">
+      <div>
+	<a class="actual" href="{%url 'users:home' %}">Vendedores</a>
+      </div>
+      <div>
+	<a class="option" href="">Actualizar Vendedor</a>
+      </div>
+      <div>
+	<a class="option" href="{%url 'sells:register' %}">Registrar Venta</a>
+      </div>
+      <div>
+	<a class="option"href="{%url 'sells:search' %}">Info. Ventas</a>
+      </div>
+      <!-- This options currently it's no available :D
 	<div>
-	  <a class="actual" href="/frontend/html/index.html">Vendedores</a>
+	<a class="option"href="/frontend/html/log_in.html">Registrar Producto</a>
 	</div>
-	<div>
-	  <a class="option" href="/frontend/html/register_seller.html">Crear Vendedor</a>
-	</div>
-	<div>
-	  <a class="option" href="/frontend/html/register_sales.html">Registrar Venta</a>
-	</div>
-	<div>
-	  <a class="option"href="/frontend/html/search_sales.html">Info. Ventas</a>
-	</div>
-<!-- This options currently it's no available :D
-<div>
-<a class="option"href="/frontend/html/log_in.html">Registrar Producto</a>
-</div>
-	-->
+      -->
       </el>
     </nav>
     <main id="content">
-      <a href="/frontend/html/info_seller.html">
+      <a href="{%url 'sells:salesman' %}">
 	<div class="seller">
 	  <img src="{%static 'users/images/Paty.jpg' %}" alt="">
 	  <h2 class="name">
-	  Paty Rodriguez
+	    Paty Rodriguez
 	  </h2>
 	</div>
       </a>
@@ -54,7 +54,7 @@
 	<div class="seller">
 	  <img src="{%static 'users/images/chang.jpg' %}" alt="">
 	  <h2 class="name">
-	  Ana Chang
+	    Ana Chang
 	  </h2>
 	</div>
       </a>
@@ -62,7 +62,7 @@
 	<div class="seller">
 	  <img src="{%static 'users/images/Andres.jpg' %}" alt="">
 	  <h2 class="name">
-	  Andrés Cabrera
+	    Andrés Cabrera
 	  </h2>
 	</div>
       </a>
@@ -70,7 +70,7 @@
 	<div class="seller">
 	  <img src="{%static 'users/images/Paty.jpg' %}" alt="">
 	  <h2 class="name">
-	  Paty Rodriguez
+	    Paty Rodriguez
 	  </h2>
 	</div>
       </a>
@@ -78,7 +78,7 @@
 	<div class="seller">
 	  <img src="{%static 'users/images/chang.jpg' %}" alt="">
 	  <h2 class="name">
-	  Ana Chang
+	    Ana Chang
 	  </h2>
 	</div>
       </a>
@@ -86,7 +86,7 @@
 	<div class="seller">
 	  <img src="{%static 'users/images/Andres.jpg' %}" alt="">
 	  <h2 class="name">
-	  Andrés Cabrera
+	    Andrés Cabrera
 	  </h2>
 	</div>
       </a>
