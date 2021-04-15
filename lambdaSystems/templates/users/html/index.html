@@ -21,7 +21,7 @@
     </header>
     <!-- Nav Bar -->
     <nav id="navegation">
-      <el class="menu">
+      <div class="menu">
       <div>
 	<a class="actual" href="{%url 'users:home' %}">Vendedores</a>
       </div>
@@ -39,57 +39,21 @@
 	<a class="option"href="/frontend/html/log_in.html">Registrar Producto</a>
 	</div>
       -->
-      </el>
+      </div>
     </nav>
     <main id="content">
-      <a href="">
-	<div class="seller">
-	  <img src="{%static 'users/images/Paty.jpg' %}" alt="">
-	  <h2 class="name">
-	    Paty Rodriguez
-	  </h2>
-	</div>
-      </a>
-      <a href="/frontend/html/info_seller.html">
-	<div class="seller">
-	  <img src="{%static 'users/images/chang.jpg' %}" alt="">
-	  <h2 class="name">
-	    Ana Chang
-	  </h2>
-	</div>
-      </a>
-      <a href="/frontend/html/info_seller.html">
-	<div class="seller">
-	  <img src="{%static 'users/images/Andres.jpg' %}" alt="">
-	  <h2 class="name">
-	    Andrés Cabrera
-	  </h2>
-	</div>
-      </a>
-      <a href="/frontend/html/info_seller.html">
-	<div class="seller">
-	  <img src="{%static 'users/images/Paty.jpg' %}" alt="">
-	  <h2 class="name">
-	    Paty Rodriguez
-	  </h2>
-	</div>
-      </a>
-      <a href="/frontend/html/info_seller.html">
-	<div class="seller">
-	  <img src="{%static 'users/images/chang.jpg' %}" alt="">
-	  <h2 class="name">
-	    Ana Chang
-	  </h2>
-	</div>
-      </a>
-      <a href="/frontend/html/info_seller.html">
-	<div class="seller">
-	  <img src="{%static 'users/images/Andres.jpg' %}" alt="">
-	  <h2 class="name">
-	    Andrés Cabrera
-	  </h2>
-	</div>
-      </a>
+        {% for salesman in salesmans %}
+
+        <a href="/users/detail/{{ salesman.pk }}/0">
+	        <div class="seller">
+                <img src="{{ salesman.picture.url }}" alt="">
+                <h2 class="name">
+                    {{ salesman.name }}
+                </h2>
+            </div>
+        </a>
+
+        {% endfor %}
 
     </main>
 
