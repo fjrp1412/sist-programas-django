@@ -71,7 +71,7 @@ class UpdateSalesman(UpdateView, LoginRequiredMixin):
 
 
 class DetailSalesmanSells(DetailView, LoginRequiredMixin):
-    template_name = "sells/info_salesman.html"
+    template_name = "users/html/info_salesman.html"
 
     # In which base will be the QuerySet made and sent by the URL
     slug_field = 'pk'
@@ -91,7 +91,7 @@ class DetailSalesmanSells(DetailView, LoginRequiredMixin):
 
 
 class DetailSalesmanAccumulated(DetailView, LoginRequiredMixin):
-    template_name = "sells/info_salesman.html"
+    template_name = "users/html/info_salesman.html"
 
     # In which base will be the QuerySet made and sent by the URL
     slug_field = 'pk'
