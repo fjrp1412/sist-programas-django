@@ -16,7 +16,14 @@ urlpatterns = [
 
     path(
         route='home/',
-        view = views.HomeView.as_view(),
+        view=views.HomeView.as_view(),
         name='home'
+    ),
+
+    path(
+        route='update/<int:pk>/',
+        view=views.UpdateSalesman.as_view(),
+        name='update'
     )
+
 ]

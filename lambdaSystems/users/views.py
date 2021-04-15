@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 
-# Create your views here.
 from django.views import View
 from users.forms import SignupForm
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import UpdateView
+from users.models import Salesman
+from django.urls import reverse
 
 
 class Signup(View):
@@ -35,7 +38,7 @@ class LoginView(auth_views.LoginView):
     template_name = 'users/html/log_in.html'
 
 
-class HomeView(View):
+class HomeView(View, LoginRequiredMixin):
     """View for home page."""
     template_name = 'users/html/index.html'
 
@@ -50,3 +53,16 @@ class HomeView(View):
             request=request,
             template_name=self.template_name,
         )
+
+
+class UpdateSalesman(UpdateView, LoginRequiredMixin):
+    """View for update a salesman user"""
+    model = Salesman
+    template_name = 'users/html/update_salesman.html'
+    fields = ['name', 'identification_document', 'picture']
+
+    def get_object(self, queryset=None):
+        return self.request.user.salesman
+
+    def get_success_url(self):
+        return reverse('users:home')
