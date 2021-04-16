@@ -10,7 +10,7 @@ urlpatterns = [
 
     path(
         route='login/',
-        view=views.LoginView.as_view(),
+        view=views.login_view,
         name='login'
     ),
 
@@ -36,6 +36,14 @@ urlpatterns = [
         route='detail/<int:pk>/1/',
         view=views.DetailSalesmanAccumulated.as_view(),
         name='salesman_accumulated'
+    ),
+
+    path(
+        route='logout/',
+        view=views.logout_view,
+        name='logout'
     )
+
+
 
 ]
