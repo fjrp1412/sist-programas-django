@@ -111,17 +111,16 @@ def logout_view(request):
 
 def login_view(request):
     """Login view"""
+
     if request.method == 'POST':
-        print(request.POST)
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        print(user)
         if user is not None:
-            print("qlq")
             login(request, user)
             return redirect('users:home')
         else:
             return render(request, 'users/html/log_in.html',
                           {'error': 'Invalid username and password'})
+
     return render(request, 'users/html/log_in.html')
