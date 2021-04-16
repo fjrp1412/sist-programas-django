@@ -1,4 +1,4 @@
-from django.contrib import admin
+"""from django.contrib import admin
 
 # Register your models here.
 from products.models import Products, Category
@@ -12,3 +12,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Products, ProductsAdmin)
 admin.site.register(Category, CategoryAdmin)
+"""
