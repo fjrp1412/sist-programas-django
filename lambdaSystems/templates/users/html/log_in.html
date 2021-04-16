@@ -29,16 +29,17 @@
 
 	<!-- Data Box -->
 
-	<form id="register-box">
+	<form id="register-box" method="POST" action="{%url 'users:login'%}">
+	  {% csrf_token %}
 	  <div id="data-box">
 	    <!-- User Email -->
 	    <div class="data">
 	      <h3 class="sub-title">
-		Correo Electrónico
+		Nombre de usuario
 	      </h3>
 	      <!-- Input Data -->
 	      <div class="bar">
-		<input class="inputdata" type="email" placeholder="Inseret su correo." required>
+		<input class="inputdata"  placeholder="Escriba su username." name="username"required>
 	      </div>
 	    </div>
 	    <!-- Password -->
@@ -48,12 +49,12 @@
 	      </h3>
 	      <!-- Input Data -->
 	      <div class="bar">
-		<input class="inputdata" type="password" placeholder="Inserte su contraseña." required>
+		<input class="inputdata" type="password" placeholder="Inserte su contraseña." name='password' required>
 	      </div>
 	    </div>
 
 	    <div class="Button">
-	      <a id="Button" href="{%url 'users:home' %}">Iniciar Sesión</a>
+	      <button id="Button" type="submit">Iniciar sesion</button>
 	    </div>
 	    <div class="Button">
 	      <a id="Button" href="{%url 'users:signup' %}">Registrate.</a>

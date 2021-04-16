@@ -27,8 +27,7 @@ def clean_order_info(order):
                     "quantity": order[f'form-{i}-quantity'],
                     "total_price": round(
                         float(order[f'form-{i}-base_price']) *
-                        float(order[f'form-{i}-quantity'])
-                        , 2)
+                        float(order[f'form-{i}-quantity']), 2)
                 }
             )
     return full_order
@@ -83,7 +82,7 @@ def register_sell(request):
     )
 
 
-class SellDetailView(DetailView, LoginRequiredMixin):
+class SellDetailView(LoginRequiredMixin, DetailView):
     # See the Detail of a Sell
 
     template_name = 'sells/info_sales.html'
@@ -111,7 +110,7 @@ class SellDetailView(DetailView, LoginRequiredMixin):
         return context
 
 
-class SearchSellsView(ListView, LoginRequiredMixin):
+class SearchSellsView(LoginRequiredMixin, ListView):
     # List Invoice as needed.
     template_name = "sells/search_sales.html"
     model = Sells

@@ -4,6 +4,7 @@ from django.views import View
 from django.views.generic import DetailView, ListView
 from users.forms import SignupForm
 from django.contrib.auth import views as auth_views
+from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView
 from users.models import Salesman
@@ -35,12 +36,13 @@ class Signup(View):
             context={'form': form})
 
 
-class LoginView(auth_views.LoginView):
-    """View for login session."""
-    template_name = 'users/html/log_in.html'
+# class SalesmanLoginView(auth_views.LoginView):
+#    """View for login session."""
+#    template_name = 'users/html/log_in.html'
+#    redirect_authenticated_user = True
 
 
-class HomeView(ListView, LoginRequiredMixin):
+class HomeView(LoginRequiredMixin, ListView):
     """View for home page."""
     template_name = 'users/html/index.html'
     model = Salesman
@@ -48,7 +50,7 @@ class HomeView(ListView, LoginRequiredMixin):
     context_object_name = 'salesmans'
 
 
-class UpdateSalesman(UpdateView, LoginRequiredMixin):
+class UpdateSalesman(LoginRequiredMixin, UpdateView):
     """View for update a salesman user"""
     model = Salesman
     fields = ('name', 'picture')
@@ -60,7 +62,7 @@ class UpdateSalesman(UpdateView, LoginRequiredMixin):
         return reverse('users:home')
 
 
-class DetailSalesmanSells(DetailView, LoginRequiredMixin):
+class DetailSalesmanSells(LoginRequiredMixin, DetailView):
     template_name = "users/html/info_salesman.html"
 
     # In which base will be the QuerySet made and sent by the URL
@@ -80,7 +82,7 @@ class DetailSalesmanSells(DetailView, LoginRequiredMixin):
         return context
 
 
-class DetailSalesmanAccumulated(DetailView, LoginRequiredMixin):
+class DetailSalesmanAccumulated(LoginRequiredMixin, DetailView):
     template_name = "users/html/info_salesman.html"
 
     # In which base will be the QuerySet made and sent by the URL
@@ -99,3 +101,27 @@ class DetailSalesmanAccumulated(DetailView, LoginRequiredMixin):
         context['plot'] = utils.accumulated_by_salesman(context['salesman'].pk)
 
         return context
+
+
+def logout_view(request):
+    """Logout a user"""
+    logout(request)
+    return redirect('users:login')
+
+
+def login_view(request):
+    """Login view"""
+    if request.method == 'POST':
+        print(request.POST)
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        print(user)
+        if user is not None:
+            print("qlq")
+            login(request, user)
+            return redirect('users:home')
+        else:
+            return render(request, 'users/html/log_in.html',
+                          {'error': 'Invalid username and password'})
+    return render(request, 'users/html/log_in.html')
