@@ -35,7 +35,11 @@ def clean_order_info(order):
 
 # Create your views here.
 def register_sell(request):
-    invoice_id = Sells.objects.latest('invoice_id').pk + 1
+    try:
+        invoice_id = Sells.objects.latest('invoice_id').pk + 1
+    except:
+        invoice_id = 1
+
     if request.method == "POST":
         # Clean the data in the Sell and calculate what is needed
         data_dict = request.POST.dict()
@@ -51,7 +55,7 @@ def register_sell(request):
             # Create and save the Sell Instance
             s = Sells(
                 invoice_id=invoice_id,
-                id_category=Category.objects.get(pk=6),
+                id_category=Category.objects.get(pk=1),
                 id_salesman=salesman,
                 customer=customer,
                 income=income,
