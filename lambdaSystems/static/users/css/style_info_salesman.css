@@ -128,7 +128,7 @@ main{
     border: rgb(235, 196, 26) 5px solid;
     background: #0a83a1;
     height: 74%;
-    width: auto;
+    width: 100%;
     margin: auto;
     box-shadow: 0px 5px 15px 5px rgba(78, 77, 80, 0.349);
 }

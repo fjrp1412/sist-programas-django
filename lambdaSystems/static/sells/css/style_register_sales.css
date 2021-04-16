@@ -114,7 +114,7 @@ body{
     /*font-family: Roboto Slab;*/
     margin-top: 5px;
     height: 370px;
-    width: 100%;
+    width: fit-content;
     background: linear-gradient(360deg,#54fd11,#2bbe57);
     box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.301);
     border-radius: 15px;
@@ -137,6 +137,7 @@ body{
     margin: 20px auto;
     align-content: center;
     text-align: center;
+    padding-right: 450px;
 }
 
 #Button{
