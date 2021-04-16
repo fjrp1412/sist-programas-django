@@ -58,7 +58,7 @@ class SearchFilterForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'inputdata',
-                'placeholder':'0'
+                'placeholder': '0'
             }
         ),
         required=False
