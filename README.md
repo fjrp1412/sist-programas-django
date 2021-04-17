@@ -1,6 +1,6 @@
 # Proyecto sistemas de programas (Lambda System)
 
-## Contiene
+## Contains
 ### Log In / Sign Up
 
 ![](README_IMAGES/login)
